@@ -16,11 +16,12 @@ Current Version [0.0.1]
 
 |  ***Revision History***
 
-===========  ======  =======  ========
+===========  ======  =======  =======================
 Date         Author  Version  Comments
------------  ------  -------  --------
+-----------  ------  -------  -----------------------
 2018-18-09    Kali   0.0.1    Initial
-===========  ======  =======  ========
+2018-20-09   Kyle    0.0.2    Elevator Pitch
+===========  ======  =======  =======================
 
 
 
@@ -48,7 +49,8 @@ Our goal is to help Moonrockers achieve a fully capable robot which surpasses pr
 Elevator Pitch
 ~~~~~~~~~~~~~~
 
-Elevator Pitch for your project inserted here.
+Space is full of scientific potential and untapped resources. However, due to the current limitation of technology we must rely on machines to study and potentially gather resources from places other than earth.
+Due to the vastness of space direct human control is not possible and machines must be able to preform tasks on their own.  Our goal at Moonrockers is to research and develop a fully autonomous mining machine that can compete against the best autonomous mining machines in a competition simulating martian contitions.  In years past Moonrockers have perfected the mechanics of such a machine, but have put little effort into the autonomous control. In 2018/2019, we intend to change that.
 
 Purpose of the System
 ~~~~~~~~~~~~~~~~~~~~~
