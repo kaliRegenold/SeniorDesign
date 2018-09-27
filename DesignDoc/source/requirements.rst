@@ -4,8 +4,8 @@ User Stories, Requirements, and Product Backlog
 Overview
 --------
 
-This section outlines the requirements for the autonamous systems being
-developed for the moonrockers team. The main tasks are split up into 
+This section outlines the requirements for the autonomous systems being
+developed for the Moonrockers team. The main tasks are split up into 
 the user stories below. The requirements in this section illustrate the
 specifics of what the system needs to be capable of and what it needs to
 handle. Some requirements are a result of the competition rules as set
@@ -13,20 +13,6 @@ forth by NASA.
 
 User Stories
 ------------
-
-This section can really be seen as the guts of the document. This
-section should be the result of discussions with the stakeholders with
-regard to the actual functional requirements of the software. It is the
-user stories that will be used in the work breakdown structure to build
-tasks to fill the product backlog for implementation through the
-sprints.
-
-This section should contain sub-sections to define and potentially
-provide a breakdown of larger user stories into smaller user stories.
-Each component must have a test identified, meaning you need to know how
-you plan to test it. If a requirement is not testable, then some
-justification needs to be made on why the requirement has been included.
-The results of the tests should go in the testing chapter.
 
 User Story #1
 ~~~~~~~~~~~~~
@@ -143,27 +129,21 @@ The project will be managed through a loose Agile method.
 Tasks relating to user stories will be managed through a Trello board.
 This team will meet with the Moonrockers team at designated meeting times and workdays weekly.
 
-Specifications
---------------
-
-Any specifications that need to be understood? Put it here.
-
 Product Backlog
 ---------------
 
 The full initial product backlog should go here. The sprint backlogs are
 located in the prototypes chapter.
 
--  What system will be used to keep track of the backlogs and sprint
-   status?
+-  Github will be used to keep track of backlogs and sprint status
 
--  Will all parties have access to the Sprint and Product Backlogs?
+-  All parties will have access to the Sprint and Product Backlogs
 
--  How many Sprints will encompass this particular project?
+-  Approximately 20 Sprints will encompass this particular project
 
--  How long are the Sprint Cycles?
+-  The Sprints will last 1 week
 
--  Are there restrictions on source control?
+-  Branches must be used for feature development and code is never pushed directly to master.
 
 Research or Proof of Concept Results
 ------------------------------------
@@ -177,7 +157,6 @@ the extent of a user interface design or mockups.
 Supporting Material
 -------------------
 
-This document might contain references or supporting material which
-should be documented and discussed either here if appropriate or more
-often in the appendices at the end. This material may have been provided
-by the stakeholders or it may be material garnered from research tasks.
+Supporting material includes:
+	- Official NASA Robotic Mining Competition registration rules.
+	- Pre-existing documentation for the previous systems.
