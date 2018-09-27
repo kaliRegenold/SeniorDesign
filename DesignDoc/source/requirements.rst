@@ -59,35 +59,40 @@ User story #3 ....
 Requirements and Design Constraints
 -----------------------------------
 
-Use this section to discuss what requirements exist that deal with
-meeting the business need. These requirements might equate to design
-constraints which can take the form of system, network, and/or user
-constraints. Examples: Windows Server only, iOS only, slow network
-constraints, or no offline, local storage capabilities.
+Autonomy system refers to all computers and sensor components relating to our project.
+Robot system refers to the collection of all systems (including autonomy), physically and digitally.
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-What are they? How will they impact the potential design? Are there
-alternatives?
+- The Robot System cannot weigh more than 80 kg. The current robot design weighs nearly 80 kg, so our autonomy design must be as light as possible. We must work with the other engineers on the team to balance the weight of the robot.
+
+- The Autonomy System should draw as little power as possible. The team is docked points in competition for power consumption.
+
+- The Autonomy System will run under Linux.
 
 Network Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-What are they?
+- The Autonomy system must have some form of wireless connection to the remote driver.
+
+- The network should be used as little as possible.
 
 Development Environment Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-What are they? Is the system supposed to be cross-platform?
+- The Autonomy system must run under Linux.
+
+- The Autonomy system must interact through ROS Kinetic.
+
+- The Autonomy system will manage localization/
 
 Project Management Methodology
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The stakeholders might restrict how the project implementation will be
-managed. There may be constraints on when design meetings will take
-place. There might be restrictions on how often progress reports need to
-be provided and to whom.
+The project will be managed through a loose Agile method.
+Tasks relating to user stories will be managed through a Trello board.
+This team will meet with the Moonrockers team at designated meeting times and workdays weekly.
 
 Specifications
 --------------
