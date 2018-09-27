@@ -37,30 +37,79 @@ The results of the tests should go in the testing chapter.
 User Story #1
 ~~~~~~~~~~~~~
 
-User story #1 discussed.
+Upgrade embedded system.
 
 User Story #1 Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Does the first user story need some division into smaller, consumable
-parts by the reader? This does not need to go to the level of actual
-task definition and may not be required.
+In order to better handle the computational tasks required for autonomy,
+newer more powerful SoCs and embedded systems will be required. The
+the current use of a rasberry pi 2 and an ODroid will not suffice. 
+
+This userstory will need to be broken down into research and 
+implementation phases. 
 
 User Story #2
 ~~~~~~~~~~~~~
 
+Camera integration.
+
 User Story #2 Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-User story #2 ....
+Various cameras will be required for the mining robot to be able to see
+its environment and gather the required information needed estimate 
+the robot's position and orientation.
 
 User Story #3
 ~~~~~~~~~~~~~
 
+Wideband Antenna Integration.
+
 User Story #3 Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-User story #3 ....
+The wideband antenna system will also be used to estimate the robot's
+position and orientation.
+
+User Story #4
+~~~~~~~~~~~~~
+
+Localization Algorithm integration.
+
+User Story #4 Breakdown
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The localization algorithms will run on the upgraded embedded systems
+and utilize the new camera/antenna systems.
+
+User Story #5
+~~~~~~~~~~~~~
+
+Integrate motion to goal algorithms.
+
+User Story #5 Breakdown
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The motion to goal algorithms will utilize the localization algorithms
+and pathfinding algorithms in order to provide the best route to a
+destination.  These algorithms will physically move the robot from
+one location to another as accurately as possible.
+
+User Story #6
+~~~~~~~~~~~~~
+
+Deposition/Mining algorithm integration.
+
+User Story #6 Breakdown
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The Deposition/Mining algorithms will use the various sensors on the
+rover to effectively mine and deposite regolith on the competition
+field. Mining will need to be monitored carefully to ensure enough
+material is being mined while ensuring we have not mined too much. 
+The deposition algorithm must also ensure that all of the regolith has
+been offloaded.
 
 Requirements and Design Constraints
 -----------------------------------
