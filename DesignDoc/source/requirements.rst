@@ -4,18 +4,12 @@ User Stories, Requirements, and Product Backlog
 Overview
 --------
 
-The overview should take the form of an executive summary. Give the
-reader a feel for the purpose of the document, what is contained in the
-document, and an idea of the purpose for the system or product.
-
-The user stories are provided by the stakeholders. You will create he
-backlogs and the requirements, and document here. This chapter should
-contain details about each of the requirements and how the requirements
-are or will be satisfied in the design and implementation of the system.
-
-Below: list, describe, and define the requirements in this chapter.
-There could be any number of sub-sections to help provide the necessary
-level of detail.
+This section outlines the requirements for the autonamous systems being
+developed for the moonrockers team. The main tasks are split up into 
+the user stories below. The requirements in this section illustrate the
+specifics of what the system needs to be capable of and what it needs to
+handle. Some requirements are a result of the competition rules as set
+forth by NASA. 
 
 User Stories
 ------------

@@ -1,9 +1,8 @@
 Overview, Description and Deliverables
 ======================================
 
-The overview should take the form of an executive summary. Give the
-reader a feel for the purpose of the document, what is contained in the
-document, and an idea of the purpose for the system or product.
+This section outlines the project at a high level. The client and the project are described below.
+The project involves creating a computer system and software to make an existing robot fully autonomous for the moonrockers team. The moonrockers team is described in the client section and the competition is discussed in the business section. The expectations of what will be created for the moonrockers team is listed in the deliverable section.
 
 
 Current Version [0.0.1]
@@ -21,12 +20,17 @@ Date         Author  Version  Comments
 -----------  ------  -------  -----------------------
 2018-18-09    Kali   0.0.1    Initial
 2018-20-09   Kyle    0.0.2    Elevator Pitch
+2018-27-09   All     0.0.3    Requirements, Description
 ===========  ======  =======  =======================
 
 
 
-Team Members and Team Name
+Team Members
 --------------------------
+Team Members:
+	- Kyle Lorenz
+	- Kali Reginold
+	- Johnathan Westlund
 
 Client
 ------
