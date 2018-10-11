@@ -4,8 +4,8 @@ Project Management
 Team Member’s Roles
 -------------------
 
-- Kyle lorenz - Software Developer
-- Kali Reginold	- Software Developer
+- Kyle Lorenz - Software Developer
+- Kali Regenold	- Software Developer
 - Johnathan Westlund - Software Developer
 
 Project Management Approach
