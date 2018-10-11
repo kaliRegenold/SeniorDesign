@@ -103,27 +103,56 @@ test, and/or develop.
 Development IDE and Tools
 -------------------------
 
-Describe which IDE and provide links to installs and/or reference
-material.
+Since the development environment is on a linux machine and most of
+the code is written in python, there is no required IDE and each
+developer may use whatever text editor they are most comfortable 
+with.
+
+For tools/dependencies all of the following are required: 
+
+* ROS Kinetic With the following packages:
+	- Catkin
+	- OpenNI
+	- AR_Track_Alvar
+	- OpenCV3
+	- RVIZ
+* Python
+* C++
+* AVR Tools
+* OpenCV
 
 Source Control
 --------------
 
-Which source control system is/was used? How was it setup? How does a
-developer connect to it?
+The Moonrockers team uses a Gitlab repository for source control of
+the current systems on the robot. This is located on the global 
+gitlab domain.
 
-Dependencies
-------------
+For our Sr. design project documentation we have a separate
+repository on the SDSMT Gitlab domain.
 
-Describe all dependencies associated with developing the system.
+Using Git for our souce control allows us to use a heirachical
+structure for our branching system.  Master and Dev. branchs
+is protected with gated checkins.  Each change made to dev has a
+dedicated branch for that feature's development.
 
 Build Environment
 -----------------
 
-How are the packages built? Are there build scripts?
+The build and run environment is Ubuntu 16.04 64bit.  This is the 
+only version of Ubuntu that will run ROS Kinetic easily. Most of 
+the packages are to be written in python and do not need to be 
+compiled. Any of the C/C++ code can be compiled with GCC or
+Makefiles. 
 
 Development Machine Setup
 -------------------------
 
-If warranted, provide a list of steps and details associated with
-setting up a machine for use by a developer.
+The following is general a list of the required steps to setup the
+development environment.
+
+* Install Ubuntu 16.04 64bit.
+* Install ROS 1 Kinetic.
+* Install and Compile OpenCV.
+* Install all of the aforementioned ROS Packages.
+* Install of the AVR Tools.
