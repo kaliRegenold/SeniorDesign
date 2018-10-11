@@ -1,66 +1,65 @@
 Project Management
 ==================
 
-This section provides some housekeeping type of information with regard
-to the team, project, environment, etc.
-
 Team Member’s Roles
 -------------------
 
-Describe who was involved and what role(s) were played.
+- Kyle lorenz - Software Developer
+- Kali Reginold	- Software Developer
+- Johnathan Westlund - Software Developer
 
 Project Management Approach
 ---------------------------
 
-This section will provide an explanation of the basic approach to
-managing the project. Typically, this would detail how the project will
-be managed through a given Agile methodology. The sprint length (i.e. 2
-weeks) and product backlog ownership and location (ex. Trello) are
-examples of what will be discussed. An overview of the system used to
-track sprint tasks, bug or trouble tickets, and user stories would be
-warranted.
+The project will be developed in an agile manner. Sprint lengths with
+be one week. Entire team meetings will take place every Monday with additional
+autonomy specific meetings will take place on Tuesdays and Thursdays. Trello will be used to manage user stories and the product backlog. The Trello page is accessible by 
+anyone on the moonrockers team, but mainly used by the autonomy team. Sprint 
+tasks will also be written on the Trello board as well as trouble tickets. 
+Git will only be used for code management.
 
 Stakeholder Information
 ------------------------
 
-This section would provide the basic description of all of the
-stakeholders for the project. Who has an interest in the successful
-and/or unsuccessful completion of this project?
+The Moonrockers team will be the primary stakeholder along with faculty advisors
+for the team.
 
 Customer or End User (Product Owner)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Who? What role will they play in the project? Will this person or group
-manage and prioritize the product backlog? Who will they interact with
-on the team to drive product backlog priorities if not done directly?
+The final user will be the Moonrockers team. The team as a whole will take responsibility
+for managing the product backlog. Because team members enter and graduate, the backlog will
+not be managed by a single person. If there are any questions about the backlog the team
+members should contact the most recent graduated seniors. 
 
 Management or Instructor (Scrum Master)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Who? What role will they play in the project? Will the Scrum Master
-drive the Sprint Meetings?
-
-Investors
-~~~~~~~~~
-
-Are there any? Who? What role will they play?
+Carter Barkley, the current Moonrockers president will be the Scrum master. Although he will
+not directly be involved in the autonomy team, he will lead sprint meetings and monitor
+overall progress of the autonomy team as well as aid on collaberation of the autonomy team
+with the rest of the Moonrockers team.
 
 Developers – Testers
 ~~~~~~~~~~~~~~~~~~~~
 
-Who? Is there a defined project manager, developer, tester, designer,
-architect, etc.?
+Kali Reginold is the unofficial project manager. Every member will participate in
+development and testing of code. 
 
 Budget
 ------
 
-Describe the budget for the project including gifted equipment and
-salaries for people on the project.
+The Moonrockers team has a budget of $5000 to cover all expenses for the team. The autonomy
+team will be able to use funds as needed with permission from the rest of the team. The
+robot and current existing hardware are provided by the team. Any sensors or computers
+added by the autonomy team will be provided by the Moonrockers team. Depending on the
+equipment used it may be lent to the team for this year only.
 
 Intellectual Property and Licensing
 -----------------------------------
 
-Describe the IP ownership and issues surrounding IP.
+Any code and algorithms used will belong to the Moonrockers team for future team use. 
+However the autonomy team reserves the right to redistibute written code as our own.
 
 Sprint Overview
 ---------------
