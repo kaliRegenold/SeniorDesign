@@ -43,7 +43,7 @@ with the rest of the Moonrockers team.
 Developers – Testers
 ~~~~~~~~~~~~~~~~~~~~
 
-Kali Reginold is the unofficial project manager. Every member will participate in
+Kali Regenold is the unofficial project manager. Every member will participate in
 development and testing of code. 
 
 Budget
