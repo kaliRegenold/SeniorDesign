@@ -64,40 +64,30 @@ However the autonomy team reserves the right to redistibute written code as our 
 Sprint Overview
 ---------------
 
-If the system will be implemented in phases, describe those
-phases/sub-phases (design, implementation, testing, delivery) and the
-various milestones in this section. This section should also contain a
-correlation between the phases of development and the associated
-versioning of the system, i.e. major version, minor version, revision.
-
-All of the Agile decisions are listed here. For example, how do you
-order your backlog? Did you use planning poker?
+Sprint cycles run every week, ending at the usual Moonrockers meeting time.
+While Trello is being used to manage tasks and timelines for completion.
 
 Terminology and Acronyms
 ------------------------
 
-Provide a list of terms used in the document that warrant definition.
-Consider industry or domain specific terms and acronyms as well as
-system specific.
-
-Sprint Schedule
----------------
-
-The sprint schedule. Can be tables or graphs. This can be a list of
-dates with the visual representation given below.
+ROS - Robot Operating System
+OpenCV - Open Computer Vision
+OpenNI - Open Natural Interaction
+RViz - 3D visualization software for ROS
+RGBD - Red, Green, Blue, Distance Camera (Distance from IR Throw)
+IR - Infrared
 
 Timeline
 --------
-
-Gantt chart or other type of visual representation of the project
-timeline.
+.. image:: gantt.png
 
 Development Environment
 -----------------------
 
-The basic purpose for this section is to give a developer all of the
-necessary information to setup their development environment to run,
-test, and/or develop.
+Primary environment is Linux on personal laptops.
+Code from personal computers will be pushed to the GitLab repository where it
+will then be pulled onto the on-board computers.
+Setup information can be found below.
 
 Development IDE and Tools
 -------------------------

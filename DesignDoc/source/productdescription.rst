@@ -1,7 +1,7 @@
 Software Agreement
 ==================
 
-Include the software contract here.
+:download:`Software Contract <software_contract.pdf>`.
 
 Product Description
 ===================
