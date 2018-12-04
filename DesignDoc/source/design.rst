@@ -101,27 +101,6 @@ Data Structures and Algorithms
 
 Describe the special data structures and any special algorithms.
 
-Data Flow
-~~~~~~~~~
-
-Communications
-~~~~~~~~~~~~~~
-
-Classes
-~~~~~~~
-
-UML
-~~~
-
-UX
-~~
-
-UI
-~~
-
-MVVM, etc
-~~~~~~~~~
-
 Localization System
 -------------------
 
