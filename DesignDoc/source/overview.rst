@@ -5,7 +5,7 @@ This section outlines the project at a high level. The client and the project ar
 The project involves creating a computer system and software to make an existing robot fully autonomous for the moonrockers team. The moonrockers team is described in the client section and the competition is discussed in the business section. The expectations of what will be created for the moonrockers team is listed in the deliverable section.
 
 
-Current Version [0.0.1]
+Current Version [1.0.0]
 ------------------------
 
 *Prepared By:*
@@ -22,7 +22,7 @@ Date         Author  Version  Comments
 2018-20-09   Kyle    0.1.0    Elevator Pitch
 2018-27-09   All     0.2.0    Requirements, Description
 2018-10-11   All     0.4.0    Contract and Project Doc
-2018-04,12   All     1.0.0    Design, Testing, Prototypes
+2018-04-12   All     1.0.0    Design, Testing, Prototypes
 ===========  ======  =======  ===========================
 
 
