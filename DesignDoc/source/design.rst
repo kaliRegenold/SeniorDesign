@@ -170,48 +170,44 @@ Design Details
 
 The localization system takes information from the AR Tag Transform library which is used to
 observe the ar tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
-is simple a collection of AR tags. Currently three are being used on the hopper. 
+is simple a collection of AR tags. Currently three are being used on the hopper. The localization
+system converts the data for use in a ROS messages.
 
-Major Component #2
--------------------
+Navigation System
+-----------------
 
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
+This system uses the AR throw and sensor information from the ASTRA camera to scan the field and
+mark obstacles. Potential functions are used to map a path around the obstacles. The navigation 
+system also monitors the data from the localization system to check on the progress the robot is
+making as it is traversing the path. The system also uses this information and wheel encoder
+from the motors to determine if the robot is stuck, meaning the wheels are turning but the 
+location is not changing.
 
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-This section can take the form of a list of features.
-
-Phase Overview
-~~~~~~~~~~~~~~
-
-This is an extension of the Phase Overview above, but specific to this
-component. It is meant to be basically a brief list with space for
-marking the phase status.
+This system generates a list of points outlining a path and gives the necessary motor control
+signals to the wheel to drive along the path. It also takes in localization information to adjust
+the path as needed if it begins to wander. The navigation system also handles getting the robot 
+unstuck if it happens to get caught on an obstacle.
 
 Architecture Diagram
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
+.. figure:: ./Navigation.png
+   :alt: Navigation Diagram [Figure 3]
+   :width: 20.0%
 
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
+   Navigation Diagram [Figure 3]
 
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
+The navigation system controls how the robot gets to a location on the field. Using the IR throw and 
+object detection capabilities 
 
 Major Component #3
 -------------------
