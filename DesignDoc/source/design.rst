@@ -125,19 +125,6 @@ MVVM, etc
 Localization System
 -------------------
 
-**If the following makes sense, use this outline, if not then modify the
-outline**
-
-This section is used to describe the design details for each of the
-major components in the system. Note that this chapter is critical for
-all tracks. Research tracks would do experimental design here where
-other tracks would include the engineering design aspects. This section
-is not brief and requires the necessary detail that can be used by the
-reader to truly understand the architecture and implementation details
-without having to dig into the code.
-
-
-
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
@@ -171,7 +158,14 @@ Design Details
 The localization system takes information from the AR Tag Transform library which is used to
 observe the ar tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
 is simple a collection of AR tags. Currently three are being used on the hopper. The localization
-system converts the data for use in a ROS messages.
+system converts the data for use in a ROS messages. The cameras are switched on and off depending
+on whether or not they can see the AR tag bundle. When first launching, the system briefly turns
+each camera on until it finds one that can see the AR bundle. The camera is then used to get the
+distance and angle from the AR bundle. If the camera loses vision of the AR bundle for a specified
+time, the camera is shut off and the system checks each camera until the AR bundle is found again.
+If at any time no cameras see the AR bundle, the wheel encoder information is used to make an
+educated guess on where the robot is relative to its last known location when it could see the AR 
+bundle.
 
 Navigation System (Path Planner)
 --------------------------------
@@ -191,8 +185,10 @@ Component Overview
 
 This system generates a list of points outlining a path and gives the necessary motor control
 signals to the wheel to drive along the path. It also takes in localization information to adjust
-the path as needed if it begins to wander. The navigation system also handles getting the robot 
-unstuck if it happens to get caught on an obstacle.
+the path as needed if it begins to wander. When the robot finishes mining the top layer of BP-1,
+the robot is rotated to dump the BP-1 off to the side and out of the way of the path to the hopper. 
+The navigation system handles rotating the robot 90 degrees from the hole and back. The navigation 
+system also handles getting the robot unstuck if it happens to get caught on an obstacle.
 
 Architecture Diagram
 ~~~~~~~~~~~~~~~~~~~~
@@ -218,16 +214,19 @@ continuously monitors information provided by the localalization system to keep 
 is relative to the path it is supposed to be following. The system will use this information to adjust wheel
 speeds in route to correct for the path variation as it occurs.
 
+The navigation system is also responsible for moving the robot away from the mining location temporarily.
+When control is given to the navigation system after digging for the first time, the system sends the
+necessary wheel commands to rotate the robot 90 degrees. This measurement does not need to be exact. The 
+collection system will dump the mined BP-1 then the navigation system will resume control. The system uses
+the forward facing ASTRA camera to relocated the hole and the localization information to move the robot to
+its exact original mining position to continue digging.
+
 
 Collection-Deposition System
 ----------------------------
 
 Technologies Used
 ~~~~~~~~~~~~~~~~~
-
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
 
 The collection-deposition system uses two sets of linear actuators to control movement along with a drive
 motor for the collection system, and a drive motor for the depostition system. The collection system has
@@ -277,4 +276,15 @@ with no load on the collection belt. The bucket chain linear actuators are then 
 toward the ground. As the buckets start digging, the current sensor indicates an increase in current indicating load
 on the system. The load is kept constant by continuously running the bucket chain while actuating down. If the current
 starts to rise, the downward actuation is temporarily stopped to prevent the bucket chain from being bogged down while
-digging. While the process is running, the system also monitors the pressure sensors under the cellsection bin
+digging. While the process is running, the system also monitors the pressure sensors under the collection bin on the 
+robot to determine when it is full. Once full, the collection belt is stopped and the arm is actuated all the way back
+up until the end stops are triggered. The system hands off control to the navigation system indicating it is full. The
+navigation system then moves the robot 90 degrees. The collection-deposition system then runs the belt and the collection
+belt because some of the buckets are still full, until the load sensors indicate the collection bin is empty. This first
+stage clears away the top level of BP-1, which os worth no points.
+
+The navigation system then routes the robot back to the mining location, reorienting it with the partially dug hole.
+The digging process is repeated, though the arm now digs deeper, collecting regolith. Once the collection bin is full the
+second time, the collection arm is retracted and angled down for movement and the navigation system takes control to drive
+the robot back to the hopper. The deposition system then runs the deposition and collection belt again until the load sensors
+indicate the collection bin is empty.
