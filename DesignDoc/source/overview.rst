@@ -5,7 +5,7 @@ This section outlines the project at a high level. The client and the project ar
 The project involves creating a computer system and software to make an existing robot fully autonomous for the moonrockers team. The moonrockers team is described in the client section and the competition is discussed in the business section. The expectations of what will be created for the moonrockers team is listed in the deliverable section.
 
 
-Current Version [0.0.1]
+Current Version [1.0.0]
 ------------------------
 
 *Prepared By:*
@@ -15,13 +15,15 @@ Current Version [0.0.1]
 
 |  ***Revision History***
 
-===========  ======  =======  =======================
+===========  ======  =======  ===========================
 Date         Author  Version  Comments
------------  ------  -------  -----------------------
+-----------  ------  -------  ---------------------------
 2018-18-09    Kali   0.0.1    Initial
-2018-20-09   Kyle    0.0.2    Elevator Pitch
-2018-27-09   All     0.0.3    Requirements, Description
-===========  ======  =======  =======================
+2018-20-09   Kyle    0.1.0    Elevator Pitch
+2018-27-09   All     0.2.0    Requirements, Description
+2018-10-11   All     0.4.0    Contract and Project Doc
+2018-04-12   All     1.0.0    Design, Testing, Prototypes
+===========  ======  =======  ===========================
 
 
 
@@ -42,8 +44,11 @@ NASA's Robotics Mining competition is designed to promote the development of int
 Project
 -------
 
-The main goal of the project is to implement full, uninterrupted autonomy on the Moonrocker's robot.
-The current state of the project already handles much of the mechanical controls, which leaves localization, obstacle collision avoidance, and path planning to be developed.
+The main goal of the project is to implement full, uninterrupted autonomy on the Moonrocker's robot for the NASA 
+Robotic mining competition (RMC).  The Moonrockers team has continued to show excelence in previous years at the
+competition. However, in order to take the excelence to the next level, it is required for the Robot to operate
+under complete autonomy. The current state of the project already handles much of the mechanical controls, which 
+leaves localization, obstacle collision avoidance, and path planning to be developed.
 
 Mission Statement
 ~~~~~~~~~~~~~~~~~

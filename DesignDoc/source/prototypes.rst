@@ -417,7 +417,7 @@ Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 We were almost entirely blocked by the Pi not connecting to wifi or ethernet.
 Plugging in the pi to a monitor and running the robot at the time time is nearly
- impossible, so this had to be fixed immediately.
+impossible, so this had to be fixed immediately.
 
 Sprint Analytics
 ~~~~~~~~~~~~~~~~
