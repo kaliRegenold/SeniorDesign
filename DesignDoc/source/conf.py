@@ -51,8 +51,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Senior Design'
-copyright = u'2018, Team Name'
-author = u'Team Name'
+copyright = u'2018, Moonrockers'
+author = u'Moonrockers'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -159,7 +159,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'DesignDoc.tex', u'Design Document',
-     u'Team Name', 'manual'),
+     u'Moonrockers', 'manual'),
 ]
 
 #latex_logo = './largelogo.png'
