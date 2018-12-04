@@ -67,7 +67,7 @@ Technologies Overview
 The system is being developed using ROS 1 kinetic to control inter process
 communication between systems. To track the AR tags on the hopper the library
 ar_track_alvar is used along with the tf library to transform the data. The
-python library inputs is used to take manual input from the xbox controller in
+python library inputs is used to take manual input from the Xbox controller in
 manual mode. The ROS package robot_localization is also being used for sensor
 fusion and filtering of input.
 
@@ -89,8 +89,8 @@ Technologies Used
 ^^^^^^^^^^^^^^^^^
 
 The ar_track_alvar library along with the tf library are used by this system. ar_track_alvar
-is used to get data about the ar tag bundle such as distance, and angles of rotation using
-the cameras. This was developed with a logitech webcam. Recently the cameras being used in the
+is used to get data about the AR tag bundle such as distance, and angles of rotation using
+the cameras. This was developed with a Logitech webcam. Recently the cameras being used in the
 competition arrived and will be used for this system.
 
 Component Overview
@@ -99,8 +99,8 @@ Component Overview
 The localization ROS node will spit out x and y coordinates of the center of the robot.
 The coordinate origin is still being determined. Right now the corner of the field with the
 hopper will be treated as (0,0) for the field. All the localization system will do is monitor which
-camera on the robot is seeing the ar tags, and use the position information about the camera relative to
-the robot as well as distance and rotation of the camera relative to the ar tag bundle to determine
+camera on the robot is seeing the AR tags, and use the position information about the camera relative to
+the robot as well as distance and rotation of the camera relative to the AR tag bundle to determine
 where the center of the robot it on the field and possibly return angle of rotation of the robot also.
 
 
@@ -114,7 +114,7 @@ Design Details
 ^^^^^^^^^^^^^^
 
 The localization system takes information from the AR Tag Transform library which is used to
-observe the ar tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
+observe the AR tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
 is simple a collection of AR tags. Currently three are being used on the hopper. The localization
 system converts the data for use in a ROS messages. The cameras are switched on and off depending
 on whether or not they can see the AR tag bundle. When first launching, the system briefly turns
@@ -166,7 +166,7 @@ location, from the hopper to the mining location, or from the mining location to
 also controls moving the robot along the path. The navigation will send wheel speed information to the
 pseudocontroller to vary the wheel speed, making the robot drive the path that was planned out in advance.
 When moving, error will be introduced, most likely from wheel slippage and uneven terrain. The navigation
-continuously monitors information provided by the localalization system to keep track of where the robot
+continuously monitors information provided by the localization system to keep track of where the robot
 is relative to the path it is supposed to be following. The system will use this information to adjust wheel
 speeds in route to correct for the path variation as it occurs.
 
@@ -185,7 +185,7 @@ Technologies Used
 ^^^^^^^^^^^^^^^^^
 
 The collection-deposition system uses two sets of linear actuators to control movement along with a drive
-motor for the collection system, and a drive motor for the depostition system. The collection system has
+motor for the collection system, and a drive motor for the deposition system. The collection system has
 end stop sensors and encoder information from the linear actuators to determine their position. The
 deposition system has load sensors in the form of pressure sensors under the collection bin to monitor
 how much material is collected. The collection has current sensors to monitor to measure the work load of
@@ -203,8 +203,8 @@ to dig at a constant rate. The collection system monitors the load sensors on th
 the collection belt and actuates the arm up when the collection bin is full. 
 The first layer dug will consist of only BP-1 which yields no points. The collection system once full for
 the first time, hands control to the navigation system which turns the robot 90 degrees. The deposition system
-then dumps the collected material back on to the field, out of the way as to not ubstruct the path to the hopper.
-The navitation system then moves the robot back to the hole. The collection system takes over and continues
+then dumps the collected material back on to the field, out of the way as to not obstruct the path to the hopper.
+The navigation system then moves the robot back to the hole. The collection system takes over and continues
 digging in the same hole, this time reaching the regolith under the BP-1. The system then mines the regolith
 until the collection bin is full on the robot. The navigation system drives the robot back to the hopper. Once
 in position, the deposition system runs the deposition belt until the collection bin is empty as indicated by
@@ -224,7 +224,7 @@ The ROS node for this system takes in information from the current sensors, load
 actuator end stops and encoders to function. When control is handed off to the collection system by the scheduler
 for the first time, the collection system assumes it is at a mining position. The scheduler wont hand off control
 if it is not in a valid mining spot. The system first uses the angle actuators to move the collection arm to a set
-vertical angle. The system starts running the bucket chain and monitors the intial current being used by the motor
+vertical angle. The system starts running the bucket chain and monitors the initial current being used by the motor
 with no load on the collection belt. The bucket chain linear actuators are then used to start shift the bucket chain
 toward the ground. As the buckets start digging, the current sensor indicates an increase in current indicating load
 on the system. The load is kept constant by continuously running the bucket chain while actuating down. If the current
