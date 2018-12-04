@@ -173,8 +173,8 @@ observe the ar tag bundle on the hopper and converts it into x y coordinates. An
 is simple a collection of AR tags. Currently three are being used on the hopper. The localization
 system converts the data for use in a ROS messages.
 
-Navigation System
------------------
+Navigation System (Path Planner)
+--------------------------------
 
 Technologies Used
 ~~~~~~~~~~~~~~~~~
@@ -199,7 +199,7 @@ Architecture Diagram
 
 .. figure:: ./Navigation.png
    :alt: Navigation Diagram [Figure 3]
-   :width: 20.0%
+   :width: 30.0%
 
    Navigation Diagram [Figure 3]
 
@@ -207,10 +207,20 @@ Design Details
 ~~~~~~~~~~~~~~
 
 The navigation system controls how the robot gets to a location on the field. Using the IR throw and 
-object detection capabilities 
+object detection capabilities, it maps out where the obstacles are on the field. This information is
+then used to create potential functions to map out a path to the goal while avoiding the obstacles.
+The navigation system maps out a path to follow, either from the starting position to a mining 
+location, from the hopper to the mining location, or from the mining location to the hopper. The system
+also controls moving the robot along the path. The navigation will send wheel speed information to the
+pseudocontroller to vary the wheel speed, making the robot drive the path that was planned out in advance.
+When moving, error will be introduced, most likely from wheel slippage and uneven terrain. The navigation
+continuously monitors information provided by the localalization system to keep track of where the robot
+is relative to the path it is supposed to be following. The system will use this information to adjust wheel
+speeds in route to correct for the path variation as it occurs.
 
-Major Component #3
--------------------
+
+Collection-Deposition System
+----------------------------
 
 Technologies Used
 ~~~~~~~~~~~~~~~~~
@@ -219,33 +229,52 @@ This section provides a list of technologies used for this component.
 The details for the technologies have already been provided in the
 Overview section.
 
+The collection-deposition system uses two sets of linear actuators to control movement along with a drive
+motor for the collection system, and a drive motor for the depostition system. The collection system has
+end stop sensors and encoder information from the linear actuators to determine their position. The
+deposition system has load sensors in the form of pressure sensors under the collection bin to monitor
+how much material is collected. The collection has current sensors to monitor to measure the work load of
+the motor.
+
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-This section can take the form of a list of features.
+The collection-deposition system controls mining the regolith and depositing it in the hopper. Once the robot
+arrives at a mining location, the system activates the angle actuators in which angles the collection arm
+horizontally then actuates the arm down to begin digging. The system will monitor how far down the buckets are
+digging using the actuator positions and monitor the current used by the collection motor to determine how much
+the collection system is digging. The system actuates the arm down at varying speed using the current sensor
+to dig at a constant rate. The collection system monitors the load sensors on the collection bin and shuts off
+the collection belt and actuates the arm up when the collection bin is full. 
+The first layer dug will consist of only BP-1 which yields no points. The collection system once full for
+the first time, hands control to the navigation system which turns the robot 90 degrees. The deposition system
+then dumps the collected material back on to the field, out of the way as to not ubstruct the path to the hopper.
+The navitation system then moves the robot back to the hole. The collection system takes over and continues
+digging in the same hole, this time reaching the regolith under the BP-1. The system then mines the regolith
+until the collection bin is full on the robot. The navigation system drives the robot back to the hopper. Once
+in position, the deposition system runs the deposition belt until the collection bin is empty as indicated by
+the load sensors. 
 
-Phase Overview
-~~~~~~~~~~~~~~
-
-This is an extension of the Phase Overview above, but specific to this
-component. It is meant to be basically a brief list with space for
-marking the phase status.
 
 Architecture Diagram
 ~~~~~~~~~~~~~~~~~~~~~
 
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
+.. figure:: ./col-dep.png
+   :alt: Collection-Deposition Diagram [Figure 3]
+   :width: 40.0%
 
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
+   Collection-Deposition Diagram [Figure 3]
 
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
+The ROS node for this system takes in information from the current sensors, load sensors, ASTRA camera, and
+actuator end stops and encoders to function. When control is handed off to the collection system by the scheduler
+for the first time, the collection system assumes it is at a mining position. The scheduler wont hand off control
+if it is not in a valid mining spot. The system first uses the angle actuators to move the collection arm to a set
+vertical angle. The system starts running the bucket chain and monitors the intial current being used by the motor
+with no load on the collection belt. The bucket chain linear actuators are then used to start shift the bucket chain
+toward the ground. As the buckets start digging, the current sensor indicates an increase in current indicating load
+on the system. The load is kept constant by continuously running the bucket chain while actuating down. If the current
+starts to rise, the downward actuation is temporarily stopped to prevent the bucket chain from being bogged down while
+digging. While the process is running, the system also monitors the pressure sensors under the cellsection bin
