@@ -260,7 +260,7 @@ robot to determine when it is full. Once full, the collection belt is stopped an
 up until the end stops are triggered. The system hands off control to the navigation system indicating it is full. The
 navigation system then moves the robot 90 degrees. The collection-deposition system then runs the belt and the collection
 belt because some of the buckets are still full, until the load sensors indicate the collection bin is empty. This first
-stage clears away the top level of BP-1, which os worth no points.
+stage clears away the top level of BP-1, which is worth no points.
 
 The navigation system then routes the robot back to the mining location, reorienting it with the partially dug hole.
 The digging process is repeated, though the arm now digs deeper, collecting regolith. Once the collection bin is full the
