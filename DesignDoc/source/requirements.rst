@@ -5,91 +5,69 @@ Overview
 --------
 
 This section outlines the requirements for the autonomous systems being
-developed for the Moonrockers team. The main tasks are split up into 
+developed for the Moonrockers team. The main tasks are split up into
 the user stories below. The requirements in this section illustrate the
 specifics of what the system needs to be capable of and what it needs to
 handle. Some requirements are a result of the competition rules as set
-forth by NASA. 
+forth by NASA.
 
 User Stories
 ------------
 
 User Story #1
 ~~~~~~~~~~~~~
+As a robot, I need to be able to localize myself on the field without using the walls.
 
-Upgrade embedded system.
-
-User Story #1 Breakdown
-^^^^^^^^^^^^^^^^^^^^^^^
-
-In order to better handle the computational tasks required for autonomy,
-newer more powerful SoCs and embedded systems will be required. The
-the current use of a rasberry pi 2 and an ODroid will not suffice. 
-
-This userstory will need to be broken down into research and 
-implementation phases. 
 
 User Story #2
 ~~~~~~~~~~~~~
+As a robot, I need to know how to traverse the obstacle section without getting stuck.
 
-Camera integration.
-
-User Story #2 Breakdown
+Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
+	- I'd like to be able to avoid obstacles.
+	- If I can't avoid obstacles, I'd like to be able to run over them, or get myself un-stuck.
 
-Various cameras will be required for the mining robot to be able to see
-its environment and gather the required information needed estimate 
-the robot's position and orientation.
 
 User Story #3
 ~~~~~~~~~~~~~
+As a robot, I need to know where to dig.
 
-Wideband Antenna Integration.
-
-User Story #3 Breakdown
+Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
+	- I'd like to know when I'm in the digging section of the course.
+	- I'd like to know when to start digging.
 
-The wideband antenna system will also be used to estimate the robot's
-position and orientation.
 
 User Story #4
 ~~~~~~~~~~~~~
+As a robot, I need to be able to collect icy regolith (gravel).
 
-Localization Algorithm integration.
-
-User Story #4 Breakdown
+Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
-
-The localization algorithms will run on the upgraded embedded systems
-and utilize the new camera/antenna systems.
+	- I'd like to collect as much icy regolith (gravel) as possible.
+	- I'd like to collect as little dry regolith (BP-1) as possible.
 
 User Story #5
 ~~~~~~~~~~~~~
+As a robot, I need to deposit the regolith.
 
-Integrate motion to goal algorithms.
-
-User Story #5 Breakdown
+Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
+	- I'd like to know when the deposition belt is full.
+	- I'd like to know where the hopper is and navigate to it.
+	- I'd like to know when I have deposited all of the regolith.
 
-The motion to goal algorithms will utilize the localization algorithms
-and pathfinding algorithms in order to provide the best route to a
-destination.  These algorithms will physically move the robot from
-one location to another as accurately as possible.
 
 User Story #6
 ~~~~~~~~~~~~~
+As a robot, in general, I need to be able to recover from any problems that arise during the competition.
 
-Deposition/Mining algorithm integration.
-
-User Story #6 Breakdown
+Breakdown
 ^^^^^^^^^^^^^^^^^^^^^^^
+	- I'd like to be able to continue the run if sensors fail.
+	- I'd like to be able to transfer manual control over if I cannot recover.
 
-The Deposition/Mining algorithms will use the various sensors on the
-rover to effectively mine and deposite regolith on the competition
-field. Mining will need to be monitored carefully to ensure enough
-material is being mined while ensuring we have not mined too much. 
-The deposition algorithm must also ensure that all of the regolith has
-been offloaded.
 
 Requirements and Design Constraints
 -----------------------------------
@@ -112,7 +90,7 @@ Below are a list of requirements built from information given in the official NA
 
 - The Autonomy system must manage collection and deposition algorithms and know when to use them.
 
-- The Autonomy system must be capable of executing contingency code to work around a problem. 
+- The Autonomy system must be capable of executing contingency code to work around a problem.
 
 Network Requirements
 ~~~~~~~~~~~~~~~~~~~~
@@ -128,7 +106,7 @@ The following are requirements on software communication put in place the the NA
 Development Environment Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following are requirements for the development environment put in place by existing software and the clients current setup. 
+The following are requirements for the development environment put in place by existing software and the clients current setup.
 
 - The Autonomy system must run under Linux.
 
@@ -182,7 +160,7 @@ The initial product backlog was essentially pulled from our requirements and eve
 
 - Scheduler systems and state machines.
 
-- Contingency code to work around problems. 
+- Contingency code to work around problems.
 
 Research or Proof of Concept Results
 ------------------------------------
@@ -193,7 +171,7 @@ Originally several adtitional options existed, like the use of wideband radio an
 
 Before further research was done, an MVP / proof of concept was created for the camera tracking system. This involved one camera and a group (bundle) of AR-Tags.  The result of this MVP was a success and proved that this was a viable solution to tracking the position of the robot.
 
-After determining the primary form of localization, research began on optimal setups for the camera arrangement on the robot.  This research included number of cameras, field of view, types of cameras, lens types, and also how to compensate for a distorting lens. First, the camera calibration was found to be taken care of already with some ROS packages and some scripts to produce a camera calibration file. 
+After determining the primary form of localization, research began on optimal setups for the camera arrangement on the robot.  This research included number of cameras, field of view, types of cameras, lens types, and also how to compensate for a distorting lens. First, the camera calibration was found to be taken care of already with some ROS packages and some scripts to produce a camera calibration file.
 
 With the above knowledge the MVP was improved to a state where multiple cameras could operate at the same time, and the location of the camera was being relayed instead of the orientation and position of the AR-Tags.
 
