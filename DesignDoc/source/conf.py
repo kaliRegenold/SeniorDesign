@@ -125,7 +125,7 @@ html_static_path = ['_static']
 #     ]
 # }
 
-html_title = 'Senior Design Project Name'
+html_title = 'Moonrockers'
 #html_logo = './logo.png'
 
 # -- Options for HTMLHelp output ------------------------------------------

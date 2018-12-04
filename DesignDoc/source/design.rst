@@ -12,67 +12,72 @@ Design and Implementation
 Systems Goals
 -------------
 
-Briefly describe the overall goals this system plans to achieve. These
-goals are typically provided by the stakeholders. This is not intended
-to be a detailed requirements listing. Keep in mind that this section is
-still part of the Overview.
+The purpose of this system is to operate the robot autonomously for the
+full length of the competition.  
 
 System Overview and Description
 -------------------------------
 
-Provide a more detailed description of the major system components
-without getting too detailed. This section should contain a high-level
-block and/or flow diagram of the system highlighting the major
-components. See Figure [systemdiagram]. This is a floating figure
-environment. LaTeX will try to put it close to where it was typeset but
-will not allow the figure to be split if moving it can not happen.
-Figures, tables, algorithms and many other floating environments are
-automatically numbered and placed in the appropriate type of table of
-contents. You can move these and the numbers will update correctly.
+The system consists of three major components: localization, navigation, and
+collection-deposition. The localization system is labeled as Localizer in
+figure 1. The navigation system is labeled as path planner, and the
+collection-deposition system is labeled as Col-Dep Planner. The localization
+system is responsible for keeping track of where the robot is on the field.
+The navigation system controls the path the robot will take to a different
+location. The collection-deposition system will control the collection components
+of the robot.
 
 .. figure:: ./diagram.png
-   :alt: A sample figure .... System Diagram [systemdiagram]
+   :alt: ROS Network Diagram [Figure 1]
    :width: 75.0%
 
-   A sample figure .... System Diagram [systemdiagram]
+   ROS Network Diagram [Figure 1]
 
-Major System Component #1
-~~~~~~~~~~~~~~~~~~~~~~~~~
+localization System
+~~~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+The localization system is in charge of finding the location of the robot on the
+field at any given time. This will mainly involve looking at an AR tag bundle, which
+will be placed on the deposition hopper, with four cameras mounted at different 
+locations on the robot. If at any time no cameras see the AR tag, the wheel encoder
+information will be used in combination with the robots last known position to make
+a guess on where the robot is while its moving until one of the cameras gets a visual
+of the AR bundle to correct the location.
 
-Major System Component #2
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Navigation System
+~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+The navigation system is used to plot a path from the known location of the robot
+to where it wants to be. This system will work with the localization system to monitor
+how well the robot is following the computed path and adjust as needed. 
 
-Major System Component #3
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Collection-Deposition system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+The collection-deposition system controls the bucket system and deposition belt as
+well as the two sets of actuators needed to move the collection arm. When the robot
+arrives at a mining site, the collection-deposition system will take over and monitor
+the depth of the buckets while digging as well as load sensors to know when the robot
+is full. Once back at the hopper, the system will run the deposition belt until the 
+load sensors indicate the collection bin is empty.
 
 Technologies Overview
 ---------------------
 
-This section should contain a list of specific technologies used to
-develop the system. The list should contain the name of the technology,
-brief description, link to reference material for further understanding,
-and briefly how/where/why it was used in the system. See
-Table [somenumbers]. This is a floating table environment. LaTeX will
-try to put it close to where it was typeset but will not allow the table
-to be split.
+The system is being developed using ROS 1 kinetic to control inter process
+communication between systems. To track the AR tags on the hopper the library
+ar_track_alvar is used along with the tf library to transform the data. The
+python library inputs is used to take manual input from the xbox controller in
+manual mode. The ROS package robot_localization is also being used for sensor
+fusion and filtering of input.
 
-+---------------+---------------+
-| 7C0           | hexadecimal   |
-+---------------+---------------+
-| 3700          | octal         |
-+---------------+---------------+
-| 11111000000   | binary        |
-+---------------+---------------+
-| 1984          | decimal       |
-+---------------+---------------+
+Links for further reading of libraries:
 
-Table: A sample Table ... some numbers. [somenumbers]
+    - ROS kinetic: http://wiki.ros.org/kinetic
+    - ar_track_alvar: http://wiki.ros.org/ar_track_alvar
+    - tf: http://wiki.ros.org/tf
+    - robot_localization: http://wiki.ros.org/robot_localization
+    - inputs.py: https://pypi.org/project/inputs/
 
 Architecture and System Design
 ------------------------------
@@ -117,7 +122,7 @@ UI
 MVVM, etc
 ~~~~~~~~~
 
-Major Component #1
+Localization System
 -------------------
 
 **If the following makes sense, use this outline, if not then modify the
@@ -136,67 +141,36 @@ without having to dig into the code.
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
+The ar_track_alvar library along with the tf library are used by this system. ar_track_alvar
+is used to get data about the ar tag bundle such as distance, and angles of rotation using
+the cameras. This was developed with a logitech webcam. Recently the cameras being used in the
+competition arrived and will be used for this system.
 
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-This section can take the form of a list of features.
-
-Phase Overview
-~~~~~~~~~~~~~~
-
-This is an extension of the Phase Overview above, but specific to this
-component. It is meant to be basically a brief list with space for
-marking the phase status.
+The localization ROS node will spit out x and y coordinates of the center of the robot.
+The coordinate origin is still being determined. Right now the corner of the field with the
+hopper will be treated as (0,0) for the field. All the localization system will do is monitor which
+camera on the robot is seeing the ar tags, and use the position information about the camera relative to
+the robot as well as distance and rotation of the camera relative to the ar tag bundle to determine
+where the center of the robot it on the field and possibly return angle of rotation of the robot also.
 
 Architecture Diagram
 ~~~~~~~~~~~~~~~~~~~~~
 
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
+.. figure:: ./Localization.png
+   :alt: Localization Diagram [Figure 2]
+   :width: 20.0%
 
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
+   Localization Diagram [Figure 2]
 
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
-Here is an example code listing:
-
-::
-
-    #include <stdio.h>
-    #define N 10
-    /* Block
-     * comment */
-
-    int main()
-    {
-        int i;
-
-        // Line comment.
-        puts("Hello world!");
-
-        for (i = 0; i < N; i++)
-        {
-            puts("Python is also great for programmers!");
-        }
-
-        return 0;
-    }
-
-This code listing is not floating or automatically numbered. If you want
-auto-numbering, but it in the algorithm environment (not algorithmic
-however) shown above.
+The localization system takes information from the AR Tag Transform library which is used to
+observe the ar tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
+is simple a collection of AR tags. Currently three are being used on the hopper. 
 
 Major Component #2
 -------------------
