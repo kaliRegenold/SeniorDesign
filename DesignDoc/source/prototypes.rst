@@ -95,7 +95,7 @@ This sprint was spent determining what we need to complete this challenge.
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 Previous teams have attacked localization with a couple different strategies:
-ar tags, antenna, and encoders/IMU. At this moment, we're not sure what tools
+AR tags, antenna, and encoders/IMU. At this moment, we're not sure what tools
 we'll need to complete the challenge, but we have basic algorithms designed.
 
 Sprint Analytics

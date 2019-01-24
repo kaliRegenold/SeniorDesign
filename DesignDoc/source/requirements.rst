@@ -121,7 +121,7 @@ These are the requirements specified by the NASA RMC specifically
 related to the competition field of play and the environment that the
 robot will be operating in.
 
-- The playing field dimentions must be 5.756m by 3.691m.
+- The playing field dimensions must be 5.756m by 3.691m.
 
 - The depth of surface BP-1 is ~30cm
 
@@ -135,7 +135,7 @@ The project will be managed through a loose Agile method.
 Tasks relating to user stories will be managed through a Trello board.
 This team will meet with the Moonrockers team at designated meeting times and workdays weekly.
 
--  Github will be used to keep track of backlogs and sprint status
+-  GitHub will be used to keep track of backlogs and sprint status
 
 -  All parties will have access to the Sprint and Product Backlogs
 
@@ -165,15 +165,31 @@ The initial product backlog was essentially pulled from our requirements and eve
 Research or Proof of Concept Results
 ------------------------------------
 
-Initial research focused on the best ways to localize the robot on the playing field. ROS Packages for such requirements are plentiful but only a few are relevant and fit our requirements and existing hardware constraints.  The result of this reasearch was to settle on useing AR-Track-Alvar for ROS Kinetic and several cameras to detect AR-Tags and calculate the position of the robot.
+Initial research focused on the best ways to localize the robot on the playing 
+field. ROS Packages for such requirements are plentiful but only a few are 
+relevant and fit our requirements and existing hardware constraints.  The 
+result of this research was to settle on useing AR-Track-Alvar for ROS Kinetic 
+and several cameras to detect AR-Tags and calculate the position of the robot.
 
-Originally several adtitional options existed, like the use of wideband radio antennas for localization eventually we settled on using just the AR-tags with the possibillity of fusing wheel encoder data to improve localization later.
+Originally several additional options existed, like the use of wideband radio 
+antennas for localization eventually we settled on using just the AR-tags with 
+the possibillity of fusing wheel encoder data to improve localization later.
 
-Before further research was done, an MVP / proof of concept was created for the camera tracking system. This involved one camera and a group (bundle) of AR-Tags.  The result of this MVP was a success and proved that this was a viable solution to tracking the position of the robot.
+Before further research was done, an MVP / proof of concept was created for the 
+camera tracking system. This involved one camera and a group (bundle) of 
+AR-Tags.  The result of this MVP was a success and proved that this was a viable
+ solution to tracking the position of the robot.
 
-After determining the primary form of localization, research began on optimal setups for the camera arrangement on the robot.  This research included number of cameras, field of view, types of cameras, lens types, and also how to compensate for a distorting lens. First, the camera calibration was found to be taken care of already with some ROS packages and some scripts to produce a camera calibration file.
+After determining the primary form of localization, research began on optimal
+ setups for the camera arrangement on the robot.  This research included number
+  of cameras, field of view, types of cameras, lens types, and also how to
+   compensate for a distorting lens. First, the camera calibration was found to
+    be taken care of already with some ROS packages and some scripts to produce
+	 a camera calibration file.
 
-With the above knowledge the MVP was improved to a state where multiple cameras could operate at the same time, and the location of the camera was being relayed instead of the orientation and position of the AR-Tags.
+With the above knowledge the MVP was improved to a state where multiple cameras
+ could operate at the same time, and the location of the camera was being
+  relayed instead of the orientation and position of the AR-Tags.
 
 Supporting Material
 -------------------

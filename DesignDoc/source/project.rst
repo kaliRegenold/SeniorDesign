@@ -13,10 +13,11 @@ Project Management Approach
 
 The project will be developed in an agile manner. Sprint lengths with
 be one week. Entire team meetings will take place every Monday with additional
-autonomy specific meetings will take place on Tuesdays and Thursdays. Trello will be used to manage user stories and the product backlog. The Trello page is accessible by 
-anyone on the moonrockers team, but mainly used by the autonomy team. Sprint 
-tasks will also be written on the Trello board as well as trouble tickets. 
-Git will only be used for code management.
+autonomy specific meetings will take place on Tuesdays and Thursdays. Trello 
+will be used to manage user stories and the product backlog. The Trello page 
+is accessible by anyone on the Moonrockers team, but mainly used by the autonomy
+team. Sprint tasks will also be written on the Trello board as well as trouble 
+tickets. Git will only be used for code management.
 
 Stakeholder Information
 ------------------------
@@ -37,7 +38,7 @@ Management or Instructor (Scrum Master)
 
 Carter Barkley, the current Moonrockers president will be the Scrum master. Although he will
 not directly be involved in the autonomy team, he will lead sprint meetings and monitor
-overall progress of the autonomy team as well as aid on collaberation of the autonomy team
+overall progress of the autonomy team as well as aid on collaboration of the autonomy team
 with the rest of the Moonrockers team.
 
 Developers – Testers
@@ -59,7 +60,7 @@ Intellectual Property and Licensing
 -----------------------------------
 
 Any code and algorithms used will belong to the Moonrockers team for future team use. 
-However the autonomy team reserves the right to redistibute written code as our own.
+However the autonomy team reserves the right to redistribute written code as our own.
 
 Sprint Overview
 ---------------
@@ -92,7 +93,7 @@ Setup information can be found below.
 Development IDE and Tools
 -------------------------
 
-Since the development environment is on a linux machine and most of
+Since the development environment is on a Linux machine and most of
 the code is written in python, there is no required IDE and each
 developer may use whatever text editor they are most comfortable 
 with.
@@ -115,14 +116,14 @@ Source Control
 
 The Moonrockers team uses a Gitlab repository for source control of
 the current systems on the robot. This is located on the global 
-gitlab domain.
+GitLab domain.
 
 For our Sr. design project documentation we have a separate
 repository on the SDSMT Gitlab domain.
 
-Using Git for our souce control allows us to use a heirachical
-structure for our branching system.  Master and Dev. branchs
-is protected with gated checkins.  Each change made to dev has a
+Using Git for our source control allows us to use a hierarchical
+structure for our branching system.  Master and dev branches
+are protected with gated check-ins.  Each change made to dev has a
 dedicated branch for that feature's development.
 
 Build Environment
