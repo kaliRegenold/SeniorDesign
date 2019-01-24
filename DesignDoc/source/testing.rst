@@ -35,6 +35,46 @@ Below are a list of testing framework dependancies for this project:
 Test design and setup
 ---------------------
 
+Additional resources are available to do physical testing of the robot in a mock
+competition environment. There is a taped full-scale outline of the competition field
+indoors in the Moonrockers workspace. The hopper location is also taped out. This 
+field is used for location testing as well as some navigation testing. The robot can
+see the AR tags on a fake hopper and determine its location on the field. This setup
+is used for basic navigation testing only since the excavation system cannot operate
+on concrete and the robot moves differently on concrete than it does on a sandy surface.
+There will be a full sized practice arena with gravel and dust simulating the conditions
+that will exist in the competition, however this is still being constructed. There is
+also a volleyball court which is used to test the behavior of the robot while driving
+on sand as well as testing the excavation system by digging in the sand.
+
+Localization
+~~~~~~~~~~~~
+
+Testing of the localization system will consist of physical tests as well as unit
+testing of the individual components. Since cameras are not yet mounted on the robot,
+a cardboard cutout is used to hold the cameras in at similar locations and angles relative
+to each other as they will be mounted on the robot. This cardboard cutout is placed at
+various locations marked out on the taped outline of the field. The localization algorithm
+computes the x and y coordinates of the center of the robot or center of the cameras (
+The corner with the hopper is (0,0)). The computed coordinates are compared to the actual
+measured coordinates of the cardboard cutout and verified for accuracy. Testing the actual
+algorithm without physicals moving the cameras is done by mocking the data being sent by
+the cameras, but since the data is complex to mock, the camera data is recorded so the same
+data can be fed in to the localization node consistently and the results should not vary.
+Though the data is filtered so exact matching of results is no expected. Once the cameras 
+are mounted to the robot, moving tests will be conducted to ensure the coordinates of the 
+robot are being correctly recomputed as the robot moves as well as ensuring the cameras can 
+maintain view of the AR tags while shaking.
+
+Environmental tests will be conducted once the practice field is built. This will ensure 
+the cameras can maintain sight of the AR tags while moving within a dusty environment and
+uneven terrain. A similar testing method will be used in this environment. 
+
+
+The majority of the testing is done via physical tests. These consist of actually 
+placing the robot with the cameras attached on the practice field and observing the
+location given by the localization algorithm. 
+
 Test cases were though up during conception of the project requirements.
 The test cases closely resemple the project requirements in that we have
 the abillity to directly test the requirements of the project as 
