@@ -23,14 +23,28 @@ real-time to allow quick and easy end to end testing of the systems.
 Dependencies
 ------------
 
-Below are a list of testing framework dependencies for this project:
+There are several dependencies for the projects testing design. For the
+purposes of this testing document we will divide the dependencies into
+software and hardware catagories.
+
+Below are a list of testing software/framework dependencies for this 
+project:
 
 * An Ubunutu 16.04 OS
-* ROS Kinetic
 * Python 2.7
+* ROS Kinetic setup in as described in the project development environment section.
 * Access to the Moonrockers code repository.
 * A wifi network connection shared with the robot.
-* SSH capability.
+* SSH capability (for comunication with robot's systems)
+
+Below are a list of testing hardware dependencies for this project:
+
+* Test competition arena (to scale)
+* Test deposition hopper (to scale)
+* Hopper AR-Tag Bundle (exact layout described in the repository documentation)
+* The Moonrockers competition robot
+* Xbox 360 Controller (manual robot control)
+* Development computer (with aforementioned software)
 
 Test design and setup
 ---------------------
@@ -75,32 +89,42 @@ robot back to a usable state quickly.
 System Testing
 --------------
 
-This section focuses on some of the methods we used to test the
-requirements given above. It is important to note that many of these 
-tests are manual in nature due to the nature of the systems being used.
-The robotic systems are physical systems, therefore many of the tests 
-require manual user operation outside of code. For example, simple 
-unit tests or other code based testing techniques would not be able to 
-provide a level of testing that we need for these systems. This is
-because you cannot test the validity of a sensor reading from code, it
-must be verified manually.
+This section focuses on the system testing or the methods that could be
+used to fully end to end test the robotic systems in a competition like
+environment. It should be noted that fully automated end to end testing 
+of the robot is out of the scope of 2018/2019 autonomy project. For this
+project we are preforming manual system testing using verificaiton of 
+realworld results. The automated end to end testing can be preformed with
+a ros simulation package called gazebo.  However, automated testing with
+gazebo requires a lot of time to setup and extensive 3d modeling of the 
+physical robot and environment.
 
-For tests relating to accuracy, particularly in relation to the
+For system tests relating to accuracy, particularly in relation to the
 localization systems, we use manual measurement with tape measures to 
 verify the correctness of a particular distance or position measurement.
 Other accuracy tests may include changing the state or conditions the 
 system is operating in and then verifying the accuracy manually again.
 
-Like with accuracy tests, tests for resilience to failure are done by 
+Like with accuracy system tests, tests for resilience to failure are done by 
 changing the state of the system or the operating conditions to something
 less desirable and noting the results and the ability of the system to
-cooperate with the challenge.
+cooperate with the challenge. In addition to changing the operating
+conditions we also can spoof sensor data using ROS's built in 
+publisher/subscriber framework. With the abillity to spoof sensor data,
+false sensor readings can be sent to various other parts of the system
+to see how they respond.
 
-For a repeatability test, keeping the environment and state of the
-system the same is important.  Having an SSH connection into the system
-helps with resetting the state of the system after each test.  Values of
+For a repeatability system tests, keeping the environment and state of the
+system the same is important. If this portion of the system testing was
+performed on an automated simulation environment, this would be trivial.
+Without simulations, however, careful attention must be given to the state
+of the system, the starting state of the robot, and the envrionment it is 
+in. Keeping these variables the same (within reason) helps to repeatedly
+test and manually measure the results to very repeatabillity of a given
+system. Having an active SSH connection into the system helps with 
+resetting the state of the system after each test iteration.  Values of
 interest are recorded by hand or electronically and the results of several
-runs are compared for consistency.
+runs can be compared for consistency.
 
 System Integration Analysis
 ---------------------------
