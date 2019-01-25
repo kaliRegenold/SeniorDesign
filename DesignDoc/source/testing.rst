@@ -8,17 +8,11 @@ will be described in the prototypes chapter.
 Overview
 --------
 
-For our project we will be able to leverage a realtime connection with
-the robot via SSH. This allows us to preform tests on the system itself
-in real time and get live debugging information back during execution.
-
-Our approach is to write code on the Moonrockers robot directly through
-ssh when possible. Otherwise git source control will be used to work on 
-code off of the robot. This is possible because the robot runs Linux on
-a Raspberry pi and an O-Droid XU4 with an internet connection. 
-
-Various scripts, algorithms, and services can be edited and restarted in
-real-time to allow quick and easy end to end testing of the systems.
+This project faces several challenges to ensure a successful competition run.
+The code will not be running in a perfect or stable environment and any number
+of problems may occur within the code, on the computers, or on th physical bot.
+For these reasons, we have employed careful testing of our system in an 
+automated and manual fashion.
 
 Dependencies
 ------------
@@ -220,15 +214,25 @@ complexity underestimation can bring into a project.
 Risk Mitigation
 ~~~~~~~~~~~~~~~
 
-In order to mitigate some of the risks analyzed in the previous section
-we plan to stick closely to our schedule laid out by the Gantt chart
-shown in section 5.8. In order to combat complexity underestimation we
-attempt to break down each section and requirement of the project into 
-as small of parts as possible. This helps us to think through each part
-of the project in more detail. 
+A lot of risk comes from the code itself and therefore we have several risk 
+mitigation strategies to ensure a successful system.
 
-For physical risks like sensor failures; we plan to integrate as much
-redundancy as is feasible in our system. The system will have many
-cameras in case one malfunctions or gets covered in dust. Additionally
-the robot has an encoder on each wheel which also provides some
-redundancy. 
+
+*Code Review*
+The most basic safeguard against errors is more than one pair of eyes on code.
+When code is merged from a feature branch to dev (or from dev to master), we 
+review the code to ensure no easy to catch bugs slip through.
+
+
+*Testing*
+The testing plan above outlines how we plan to catch sneakier errors that can
+cause fatal flaws in our system. Through automated and manual testing, we ensure
+that the robot successfully runs the competition in an unstable environment.
+
+
+*Redundancy*
+Redundancy is the most important risk mitigation strategy we employ.
+There are some risks that we have no control over and have to deal with if they
+arise. Redundancy in hardware and software help the robot recover from failures.
+For example, there are multiple cameras on the robot so that losing a single
+camera feed will not stop the robot's competition run.
