@@ -64,7 +64,8 @@ testing the excavation system by digging in the sand.
 
 The tests are categorized by which system they directly interact with. Each
 system will be tested physically and with in code tests with mock data when
-possible for quick and easy repeatability. 
+possible for quick and easy repeatability. The tests ensure all systems operate
+as intended as well as handle unintended situations gracefully.
 
 Localization
 ~~~~~~~~~~~~
@@ -73,23 +74,25 @@ Recall the localization system is in charge of keeping track of the robots
 coordinate location and rotation on the field. Testing of the localization
 system will consist of physical tests as well as unit testing of the individual
 components. Since cameras are not yet mounted on the robot, a cardboard cutout
-is used to hold the cameras in at similar locations and angles relative to each
+is used to hold the cameras at similar locations and angles relative to each
 other as they will be mounted on the robot. This cardboard cutout is placed at
 various locations marked out on the taped outline of the field. The localization
 algorithm computes the x and y coordinates of the center of the robot or center
 of the cameras (The corner with the hopper is (0,0)). The computed coordinates
 are compared to the actual measured coordinates of the cardboard cutout and
-verified for accuracy. Testing the actual algorithm without physicals moving the
-cameras is done by mocking the data being sent by the cameras, but since the
-data is complex to mock, the camera data is recorded so the same data can be fed
-in to the localization node consistently and the results should not vary. Though
-the data is filtered so exact matching of results is no expected. Once the
-cameras are mounted to the robot, moving tests will be conducted to ensure the
-coordinates of the robot are being correctly recomputed as the robot moves as
-well as ensuring the cameras can maintain view of the AR tags while shaking.
-Because the hopper could be on either side of the field, depending on which
-competition field we are given, the tests will be run in each configuration to
-ensure the robot can handle both situations. 
+verified for accuracy. The localization also reports the angle of the robot so
+the cardboard cutout is rotated to three different angles at each location. This
+relies on camera switching to work. Testing the actual algorithm without
+physically moving the cameras is done by mocking the data being sent by the
+cameras, but since the data is complex to mock, the camera data is recorded so
+the same data can be fed in to the localization node consistently and the
+results should not vary. Though the data is filtered so exact matching of
+results is not expected. Once the cameras are mounted to the robot, moving tests
+will be conducted to ensure the coordinates of the robot are being correctly
+recomputed as the robot moves as well as ensuring the cameras can maintain view
+of the AR tags while shaking. Because the hopper could be on either side of the
+field, depending on which competition field we are given, the tests will be run
+in each configuration to ensure the robot can handle both situations. 
 
 Environmental tests will be conducted once the practice field is built. This
 will ensure the cameras can maintain sight of the AR tags while moving within a
@@ -99,12 +102,13 @@ this environment.
 Camera switching will also be tested with localization. Because of USB
 limitations, only two cameras can be turned on at once. Therefore if a camera
 can not see the AR tags, it turns off. If a camera can see the AR tags, then
-that camera will be used until the robot rotates in such as way the camera
-losses the tags. Then the camera will shut off and the remaining cameras are
-cycled through until the AR tags are picked up again. This algorithm is
-initially tested with the cardboard cutout holding the cameras and simply
-rotating it so different cameras have to be used, ensuring data is always being
-sent out from at least one camera. 
+that camera will be used until the robot rotates in such as way the camera loses
+the tags. Then the camera will shut off and the remaining cameras are cycled
+through until the AR tags are picked up again. This algorithm is initially
+tested with the cardboard cutout holding the cameras and simply rotating it so
+different cameras have to be used, ensuring data is always being sent out from
+at least one camera. This testing will later be combined with physically testing
+the location data on the field once the cameras are properly mounted. 
 
 Navigation
 ~~~~~~~~~~
@@ -112,7 +116,7 @@ Navigation
 The navigation system finds a path from the robot's current location to the goal
 and controls how the robots drives along the path. The system takes in location
 data from the localization system, plans a route to a goal, and feeds wheel
-speed signals to the drive motors top move the robot. The simple physical tests
+speed signals to the drive motors to move the robot. The simple physical tests
 used for this algorithm consist of placing the robot down at a set location on
 the field and manually enter a goal location to drive to. With no obstacles the
 navigation system should plan a straight line path and follow the line, stopping
@@ -139,7 +143,7 @@ necessary. This information along with the goal will be used to develope
 potential fields which will be used to plan a route for the robot to follow.
 Since these fields vary depending on the start and end location as well as
 obstacle location, it would be difficult to mock out a "correct" potential field
-to compare the navigation system's output to. instead the generated path will
+to compare the navigation system's output to. Instead the generated path will
 have to be manually checked to see if it will work for the given scenario. This
 testing will not be automated and rely on physically showing the ASTRA camera
 the field since the data the camera generates would be too complex to mock out.
