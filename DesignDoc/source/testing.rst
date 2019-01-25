@@ -19,17 +19,17 @@ Dependencies
 
 There are several dependencies for the projects testing design. For the
 purposes of this testing document we will divide the dependencies into
-software and hardware catagories.
+software and hardware categories.
 
 Below are a list of testing software/framework dependencies for this 
 project:
 
-* An Ubunutu 16.04 OS
+* An Ubuntu 16.04 OS
 * Python 2.7
 * ROS Kinetic setup in as described in the project development environment section.
 * Access to the Moonrockers code repository.
-* A wifi network connection shared with the robot.
-* SSH capability (for comunication with robot's systems)
+* A WIFI network connection shared with the robot.
+* SSH capability (for communication with robot's systems)
 
 Below are a list of testing hardware dependencies for this project:
 
@@ -127,9 +127,9 @@ This section focuses on the system testing or the methods that could be
 used to fully end to end test the robotic systems in a competition like
 environment. It should be noted that fully automated end to end testing 
 of the robot is out of the scope of 2018/2019 autonomy project. For this
-project we are preforming manual system testing using verificaiton of 
-realworld results. The automated end to end testing can be preformed with
-a ros simulation package called gazebo.  However, automated testing with
+project we are preforming manual system testing using verification of 
+real world results. The automated end to end testing can be preformed with
+a ROS simulation package called Gazebo.  However, automated testing with
 gazebo requires a lot of time to setup and extensive 3d modeling of the 
 physical robot and environment.
 
@@ -144,7 +144,7 @@ changing the state of the system or the operating conditions to something
 less desirable and noting the results and the ability of the system to
 cooperate with the challenge. In addition to changing the operating
 conditions we also can spoof sensor data using ROS's built in 
-publisher/subscriber framework. With the abillity to spoof sensor data,
+publisher/subscriber framework. With the ability to spoof sensor data,
 false sensor readings can be sent to various other parts of the system
 to see how they respond.
 
@@ -152,9 +152,9 @@ For a repeatability system tests, keeping the environment and state of the
 system the same is important. If this portion of the system testing was
 performed on an automated simulation environment, this would be trivial.
 Without simulations, however, careful attention must be given to the state
-of the system, the starting state of the robot, and the envrionment it is 
+of the system, the starting state of the robot, and the environment it is 
 in. Keeping these variables the same (within reason) helps to repeatedly
-test and manually measure the results to very repeatabillity of a given
+test and manually measure the results to very repeatability of a given
 system. Having an active SSH connection into the system helps with 
 resetting the state of the system after each test iteration.  Values of
 interest are recorded by hand or electronically and the results of several
