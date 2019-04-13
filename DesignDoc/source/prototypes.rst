@@ -44,16 +44,6 @@ Sprint Retrospective
 We successfully familiarized ourselves with what we have to work with and the
 challenge we need to complete. At this point, there's a lot a do and to research.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-[insert pictures of brain box here]
-
-
-
-
-
-
-
 
 Sprint 2 Report
 ---------------
@@ -98,13 +88,6 @@ Previous teams have attacked localization with a couple different strategies:
 AR tags, antenna, and encoders/IMU. At this moment, we're not sure what tools
 we'll need to complete the challenge, but we have basic algorithms designed.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-[Insert ROS diagram here]
-
-
-
-
 
 Sprint 3 Report
 ---------------
@@ -143,11 +126,6 @@ Sprint Retrospective
 We were able to decide on the sensors we'd like to use.
 The antennas aren't a main priority for us, and we're mostly pushing that over to the EEs.
 The AR Tag system seems like a good start; the team has used them in the past.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-
 
 
 Sprint 4 Report
@@ -189,12 +167,6 @@ Sprint Retrospective
 This sprint feels like it was unproductive, because there weren't any
 deliverables directly related to the Moonrocker's robot.
 We did gain technical knowledge, though, to use toward developing for the robot.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-[Put in pictures of cool ASUS stuff?]
-
-
 
 
 
@@ -238,11 +210,6 @@ Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 The code is not finalized, but it's an MVP for future AR tag code.
 This is the beginning of the localization node.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-
 
 
 Sprint 6 Report
@@ -288,9 +255,6 @@ Sprint Retrospective
 This sprint was incredible productive. We saw a flaw in our design though,
 and will have to work with the team to create a system for more cameras.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
 
 
 
@@ -331,9 +295,6 @@ Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 Localization node report accurate distances, but the rotation information is off.
 We'll have to find the correct way to transform it.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
 
 
 
@@ -376,9 +337,6 @@ The pseudocontroller is a very critical part of the robot autonomy, as it
 allows our code to interface with the robot's code.
 The file system rework was standard house cleaning and needed to be done.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
 
 Sprint 9 Report
 ---------------
@@ -419,10 +377,6 @@ We were almost entirely blocked by the Pi not connecting to wifi or ethernet.
 Plugging in the pi to a monitor and running the robot at the time time is nearly
 impossible, so this had to be fixed immediately.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-
 
 Sprint 10 Report
 ----------------
@@ -449,10 +403,6 @@ Thanksgiving, no progress
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
 
 
 Sprint 11 Report
@@ -493,14 +443,7 @@ We got the cameras in this week, so we wrote the second one into our code.
 This was an extremely smooth process, which was nice.
 We did not get to test the fidelity of the data coming form the two cameras, though.
 
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-
-
-
-Sprint 1 Report
+Sprint 12 Report
 ----------------
 2019.1.6
 
@@ -554,7 +497,7 @@ We ran in to unforseen issue and brainstormed ways on how to fix them. We
 expected this to just work as we had it working with two cameras plugged
 directly into the odroid without a problem.
 
-Sprint 2 Report
+Sprint 13 Report
 ----------------
 2019.1.13
 
@@ -609,7 +552,7 @@ Sprint Analytics
 ~~~~~~~~~~~~~~~~
 
 
-Sprint 3 Report
+Sprint 14 Report
 ----------------
 2019.1.20
 
@@ -661,7 +604,7 @@ The sensor fusion between the encoder data and the camera data still needs
 refinement but progress was made.
 
 
-Sprint 4 Report
+Sprint 15 Report
 ----------------
 2019.1.27
 
@@ -716,7 +659,7 @@ people around so we began fixing the problems ourselves.
 
 
 
-Sprint 5 Report
+Sprint 16 Report
 ----------------
 2019.2.3
 
@@ -759,7 +702,7 @@ Not enough got done and some of the hardware problems should be dealt with by
 other team members which did not happen.
 
 
-Sprint 6 Report
+Sprint 17 Report
 ----------------
 2019.2.10
 
@@ -798,7 +741,7 @@ Sprint Retrospective
 More could have been accomplished if the hardware were ready by this point.
 
 
-Sprint 7 Report
+Sprint 18 Report
 ----------------
 2019.2.17
 
@@ -831,3 +774,151 @@ Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 This dealt a blow to the teams current plans and left a lot of unknowns as we
 decided how to proceed.
+
+
+Sprint 19 Report
+----------------
+2019.3.10
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+    - Develop contingency algorithm to allow the robot to find ar-tags when lost.
+    - Continue developing on point to point path traversal.
+
+Deliverable
+~~~~~~~~~~~
+    - A robot that is capable of relocating itself on the field if an AR-tag is lost.
+    - A robot that does not provide completely false localization data if AR-tags are not visible.
+    - A starting point for the simple path traversal algorithm with some configurable parameters.
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+The robot was able to search for AR-tags when first placed on the playing field.  
+If the Ar-tags are not found the robot successfully executed a 45 degree rotation to help align cameras.
+After several tests placing the robot in different locations and angles, the Ar-tags were always found.
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    - The code remained modular and made extra use of the config file developed previously.
+    - Localization is now more self sufficient.
+    - The robot can locate it self on the field at startup or after a loss of Ar-tag visibility.
+Failures
+    - A new bug relating to robot angle with 2 of the 4 cameras became apparent.
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No changes needed to be made to this sprint.
+
+Sprint Review
+~~~~~~~~~~~~~
+The appearance of the robot angle bug is a small setback but the robot is moving closer to complete autonomy.
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+Because the cameras already cycle through automatically to find an AR-tag this algorithm was fairly easy
+to write. Most of this sprint involved testing that resulted in another set of good verifiable test results
+on the localization system. Also the bug that was revealed once fixed will improve accuracy of the robot's 
+localization.
+
+
+Sprint 20 Report
+----------------
+2019.3.17
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+    - Fix remaining localization bugs
+    - Improve robot localization accuracy between AR-Tag updates (while moving over rough terrain)
+    - Expose more low level hardware information to ROS nodes (such as motor current data)
+    - Design new full hopper AR-Tag array
+    - Continue work on point to point path traversal
+
+Deliverable
+~~~~~~~~~~~
+	- Accurate localization with no angle errors for some cameras
+	- Localization that interpolates using encoder data between Ar-tag updates.
+	- A robot with necessary motor current sensor data available to start work on collection and deposition algorithms.
+	- A full sized hopper Ar-Tag array to replace the small test Ar-tags.
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+After fixing the camera angle bugs testing of the new interpolation begun, followed by testing of the new full sized 
+AR-tag array.
+	- At first the interpolation of encoder data seemed to be quite inaccurate
+	- A small change was made to increase the encoder polling rate improved the accuracy at the cost of more system-resources on the pi.
+	- Testing of the full AR-tag array resulted in completely inaccurate localization data.
+	- Further investigation revealed the Ar-tag tracking library in use is incapable of properly dealing with Ar-tags of varying sizes.
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    - The code remained modular and made extra use of the config file developed previously.
+    - After some tweaking the encoder data is being used in tandem with the Ar-Tag data successfully.
+Failures
+    - The unknown limitation of the Ar-Tracking library for varying Ar-tag size.
+    - As a result the full size Ar-tag needs to be scrapped and redesigned.
+
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Motor current sensing remains on the backlog until path new Ar-tag problems are resolved.
+
+Sprint Review
+~~~~~~~~~~~~~
+	- This sprint is a bit larger than normal due to part of one of the weeks having a large snow storm.
+	- The sprint was mostly successful baring the new found limitations of the Ar-tag tracking library.
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+For this sprint there was not much more we could have done to prevent the limitation of a library that has little documentation.
+Some design time and a small amount of funds for the professionally printed Ar-tag banner was wasted, however the fix remains quite simple.
+
+
+Sprint 21 Report
+----------------
+2019.4.1
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+    - Redesign a new full sized Ar-tag array.
+    - Test accuracy of full sized Ar-tag.
+    - More work on path traversing
+    - Prepare for Design fair.
+
+Deliverable
+~~~~~~~~~~~
+	- A full sized hopper Ar-Tag array to replace the small test Ar-tags.
+	- A robot capable of traveling between two points.
+	- A design fair poster.
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+The testing of the new Ar-tag array was a success.  The position data of the from the new full size array is much more stable and accurate.
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    - The code remained modular and made extra use of the config file developed previously.
+    - With the new Ar-tags the added stability and accuracy of the localization is encouraging.
+Failures
+    - Time management, some inability to meet with team and, other events resulted in less getting done than originally planed.
+    - Path traversal was not quite ready to be tested.
+    - More battery issues cause the robot to remain immobile.
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Path traversal remains on backlog.
+
+Sprint Review
+~~~~~~~~~~~~~
+- Again this sprint is a bit larger than normal due to part of the following week having a large snow storm.
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+This sprint could had more done, however, the snowstorm and some electrical engineer members not able to attend workdays
+caused less work to get done than originally planned.  The continued battery issues that plague the robot occasionally prevent 
+testing from getting done.
+
+The new Ar-Tag array is large enough to help us further test the camera's ocular calibration. The early results show that we
+could do better but it may not be necessary.
