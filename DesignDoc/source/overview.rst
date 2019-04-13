@@ -45,7 +45,7 @@ Client
 The Moonrockers are a multidisciplinary team that participates in the NASA 
 Robotic Mining Competition each year at the Kennedy Space Center.  Activities 
 are focused on vehicle development, student professional development, teaming,
- and K-12 outreach.
+and K-12 outreach.
 
 NASA's Robotics Mining competition is designed to promote the development of 
 interest in space activities and STEM (Science, Technology, Engineering, and 
@@ -60,8 +60,8 @@ The main goal of the project is to implement full, uninterrupted autonomy on
  Moonrockers team has continued to show excellence in previous years at the 
  competition. However, in order to take the excellence to the next level, it is 
  required for the Robot to operate under complete autonomy. The current state of
-  the project already handles much of the mechanical controls, which leaves 
-  localization, obstacle collision avoidance, and path planning to be developed.
+ the project already handles much of the mechanical controls, which leaves 
+ localization, obstacle collision avoidance, and path planning to be developed.
 
 Mission Statement
 ~~~~~~~~~~~~~~~~~
@@ -74,14 +74,14 @@ Elevator Pitch
 
 Space is full of scientific potential and untapped resources. However, due to
 the current limitation of technology we must rely on machines to study and
- potentially gather resources from places other than earth.
+potentially gather resources from places other than earth.
 Due to the vastness of space direct human control is not possible and machines
- must be able to preform tasks on their own.  Our goal at Moonrockers is to 
- research and develop a fully autonomous mining machine that can compete 
- against the best autonomous mining machines in a competition simulating 
- Martian conditions.  In years past Moonrockers have perfected the mechanics of 
- such a machine, but have put little effort into the autonomous control.
-  In 2018/2019, we intend to change that.
+must be able to preform tasks on their own.  Our goal at Moonrockers is to 
+research and develop a fully autonomous mining machine that can compete 
+against the best autonomous mining machines in a competition simulating 
+Martian conditions.  In years past Moonrockers have perfected the mechanics of 
+such a machine, but have put little effort into the autonomous control.
+In 2018/2019, we intend to change that.
 
 Purpose of the System
 ~~~~~~~~~~~~~~~~~~~~~
