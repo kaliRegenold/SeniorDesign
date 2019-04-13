@@ -496,3 +496,215 @@ We did not get to test the fidelity of the data coming form the two cameras, tho
 
 Sprint Analytics
 ~~~~~~~~~~~~~~~~
+
+
+
+
+Sprint 1 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 2 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 3 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 4 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 5 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 6 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
+
+
+Sprint 7 Report
+----------------
+2018.11.19
+
+Sprint Backlog
+~~~~~~~~~~~~~~
+
+Deliverable
+~~~~~~~~~~~
+
+Results of testing
+~~~~~~~~~~~~~~~~~~
+
+Successes and Failures
+~~~~~~~~~~~~~~~~~~~~~~
+
+Modifications required (product backlog, design, requirements, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sprint Review
+~~~~~~~~~~~~~
+Thanksgiving, no progress
+
+Sprint Retrospective
+~~~~~~~~~~~~~~~~~~~~
+
+Sprint Analytics
+~~~~~~~~~~~~~~~~
