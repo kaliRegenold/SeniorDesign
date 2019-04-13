@@ -457,7 +457,7 @@ Sprint Analytics
 
 Sprint 11 Report
 ----------------
-2018.10.26
+2018.11.26
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
@@ -502,59 +502,108 @@ Sprint Analytics
 
 Sprint 1 Report
 ----------------
-2018.11.19
+2019.1.6
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Tested the localization system operation with multiple cameras.
 
 Deliverable
 ~~~~~~~~~~~
+More progress made for the localization node.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Up until now, only one or two cameras plugged directly into the odroid. This
+worked fine, though the distance measurement jumped back and forth as the
+cameras were both being looked at and were feeding data that was slightly off
+because they were separated by a few inches. We had future plans to deal with
+this by applying a transform to each camera giving information so each camera
+knows where it is relative to the robot and can adjust its measurements. This
+would make each camera give the same information as the others. Four cameras
+were needed to see all around the robot and the odroid only has three USB ports
+so a hub would be used to connect them. We plugged all four cameras into the USB
+3.0 hub and into the odroid and realized nothing worked. The cameras are all USB
+2.0 devices and even though there is theoretically enough throughput capacity to
+run all the cameras at the same time, this could not be done. Even two cameras
+running at the same time caused the node to crash. This was verified on multiple
+other computers and online forums. No computer was capable of looking at the
+camera feed of more than one camera at a time when connected to USB hub. 
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -The localization still worked when the cameras were plugged in to the odroid directly.
+Failures
+    -The USB hub can not operate all the cameras at the same time. 
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This problem was not accounted for and had to be fixed. We had to prevent ROS
+from launching more than one camera node at a time. We decided to implement a
+camera switching algorithm to handle it.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+We attempted to get all four cameras working for localization but ran in to
+hardware limitations of USB. Which is ridiculous.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
+We ran in to unforseen issue and brainstormed ways on how to fix them. We
+expected this to just work as we had it working with two cameras plugged
+directly into the odroid without a problem.
 
 Sprint 2 Report
 ----------------
-2018.11.19
+2019.1.13
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Implemented a camera switching algorithm.
 
 Deliverable
 ~~~~~~~~~~~
+    -More progress was made on the localization system.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Because of the issue last sprint, a camera switching algorithm was added to
+start and stop camera nodes depending on if they could see the tags. Depending
+on the orientation of the robot, either one or two cameras will be able to see
+the AR tags. The algorithm cycles between the cameras, turning them on then off
+if they dont pick up the AR tag bundle within a certain time frame. If the
+cameras see the bundle, the camera stays on and the cycling pauses until the
+camera looses the bundle for a certain period of time. This was tested by
+plugging all four cameras in and moving them so they pointed at the tags one at
+a time. 
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -The camera switching algorithm seemed to work fine and the distance simply
+    jumped once a new camera was selected. This would be addressed later.
+Failures
+    -Since ar_track_alvar takes a second to find the bundle, we had to pause on
+    each camera when it was selected to give it a chance to find the bundle
+    which slowed the switching down. If switching sequentially from camera 0 to
+    3, if the tags were viewed from camera 3 then the robot rotated to camera 2,
+    cameras 0 and 1 are checked first, causing a delay in the data.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+With the algorithm in place, the camera was working as we intended it to by just
+plugging them in as planned.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+Camera switching was added and is functional.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
+The cameras were tested by hand on a cardboard cutout since they were not
+mounted to the robot yet which was not ideal but allowed us to test the
+algorithm. Considering this was not planned for, this quick fix worked well.
 
 Sprint Analytics
 ~~~~~~~~~~~~~~~~
@@ -562,149 +611,223 @@ Sprint Analytics
 
 Sprint 3 Report
 ----------------
-2018.11.19
+2019.1.20
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Added wheel encoder information to the localization system.
 
 Deliverable
 ~~~~~~~~~~~
+    -Improved the localization system.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+To get more accurate results for localizing the robot, we decided to combine the
+data given by the camera system with the wheel encoder information to better
+find the location of the robot. If the cameras lost sight of the tags for a few
+seconds, the wheel encoder information would continue feeding location data
+calculated from the robots kinematics and the wheel speed data. Even if the
+cameras were giving location information, it could be verified with the wheel
+speed data. We wasted some time because previously written code incorrectly
+calculated the robots motion because one of the wheels was being ignored. This
+initially caused confusion as we did not expect the bug to be in last years
+code.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -The encoder information from the wheels was verified to be correct be
+    driving the robot around and comparing the distance driven to the calculated
+    distance driven.
+
+Failures
+    -The robot velocities were initially off because of a bug in last years
+    code. This caused unnecessary time to be spent looking for the problem.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The use of the encoders was intended from the beginning so no major modifications were necessary.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+This sprint focused on using the encoder information on the drive motors and the
+kinematic data to estimate the robots position. This method does require a
+starting position be known, which has to be provided by the cameras.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
+The sensor fusion between the encoder data and the camera data still needs
+refinement but progress was made.
 
 
 Sprint 4 Report
 ----------------
-2018.11.19
+2019.1.27
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Revised collection and deposition algorithms.
 
 Deliverable
 ~~~~~~~~~~~
+    -Made modifications to the collection and deposition systems we thought
+    would work initially.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Concerns were brought up of the robot's capability to mine 30cm down to collect
+the regolith after extending the actuators all the way down and back up when
+testing the actuator movement. The actuators that lower the bucket chain into
+the ground move very slow which caused concerns with our current method of
+digging the bp-1 off the surface, retracting the buckets, turning the robot and
+dumping out the useless bp-1 before turning back toward the hole and extending
+the buckets all the way back down to dig the regolith. This would take a
+considerable amount of time. The robot is required to make two excavation trips
+and the whole run must be completed in ten minutes. In order to save time and
+algorithm complexity, it was decided the robot would dig until it reached the
+regolith, then deposit the bp-1 directly behind it to empty the collection bin
+before continuing to dig. This saved time and complexity since we would not need
+to relocate the hole. 
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -Found a better solution for the collection and deposition algorithms.
+
+Failures
+    -Battery problems prevented further testing on the robot.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The requirements remain the same, the methods used for collection and deposition
+were modified for simplicity and because of time constraints. Previous team
+members confirmed the capabilities of the robot which should be able to drive
+over the bp-1 deposited behind it.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+This sprint focused on revising algorithms and we came out with better solutions.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
+Battery problems prevented the robot from driving. The CSC team seemed to be the only
+people around so we began fixing the problems ourselves.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
 
 
 Sprint 5 Report
 ----------------
-2018.11.19
+2019.2.3
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Resolved hardware issues and rebuild brain box.
 
 Deliverable
 ~~~~~~~~~~~
+    -This sprint fixed hardware problems related to development.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+The USB 3.0 hub need for the cameras could not fit in the original brain box
+enclosure which also blocked certain ports on the pi and odroid. We ended up
+temporarily relocating the equipment into a new larger enclosure and wired it up
+to the best of our ability because no EE members were present.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -Made the robot operational again
+
+Failures
+    -Continuing battery problems
+    -None of the hardware problems should have been an issue. Cameras should
+    also have been mounted by now.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The brain box was redesigned and rebuilt to accommodate our added hardware. 
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+The robot was fixed to make it operational again.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
+Not enough got done and some of the hardware problems should be dealt with by
+other team members which did not happen.
 
 
 Sprint 6 Report
 ----------------
-2018.11.19
+2019.2.10
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Implemented an updated configuration file used for field and robot parameters.
 
 Deliverable
 ~~~~~~~~~~~
+    -This addition affected mainly localization and path planning.
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+A configuration file to store the field dimension, robot dimensions, coordinate
+offsets for AR tag bundle and camera placement, etc. was conceived early on but
+existed in whiteboard form only. We added the configuration file to the robot
+and moved parameters to it. This would centralize any dimensions that could
+change in the future and make changes to the parameters simple and easy.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Successes
+    -Configuration file added to code.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No major modifications were made to the design.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+Progress was made even though we were still waiting for camera mounts and a
+collection bin to begin testing on the actual robot.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
+More could have been accomplished if the hardware were ready by this point.
 
 
 Sprint 7 Report
 ----------------
-2018.11.19
+2019.2.17
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
+    -Discussed NASA Competition cancellation.
 
 Deliverable
 ~~~~~~~~~~~
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
+    -Deliverables were subject to change depending on if the competition would
+    still be held.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
+Failures
+    -We do not know what will be required of NASA's now virtual competition.
+    -If the competition is held at a private location, rules may change.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unknown modifications will have to be made to account for rule changes if a
+third party decides to host their own competition.
 
 Sprint Review
 ~~~~~~~~~~~~~
-Thanksgiving, no progress
+The team held an emergency meeting to discuss the course of action and look at
+competition proposals from Alabama and Central Florida.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
+This dealt a blow to the teams current plans and left a lot of unknowns as we
+decided how to proceed.
