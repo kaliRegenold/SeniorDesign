@@ -252,7 +252,7 @@ This sprint was developing the AR tag nodes with better camera calibration and A
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-This sprint was incredible productive. We saw a flaw in our design though,
+This sprint was incredibly productive. We saw a flaw in our design though,
 and will have to work with the team to create a system for more cameras.
 
 
