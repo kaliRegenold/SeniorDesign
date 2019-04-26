@@ -10,14 +10,14 @@ Sprint Backlog
     - Read RMC rules and understand the challenge
     - Take apart the brain box and note what hardware we have to work with
     - Read old documentation
-    - Access and read Moonrocker's repository
+    - Access and read Moonrockers' repository
     - Research ROS
 
 Deliverable
 ~~~~~~~~~~~
 Knowledge
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 N/A
 
@@ -61,7 +61,7 @@ Deliverable
     - Research
     - ROS node network diagram
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 N/A
 
@@ -102,7 +102,7 @@ Deliverable
 ~~~~~~~~~~~
 Decision on sensors: 2 ASTRA cameras, two antennas (from last year).
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 N/A
 
@@ -141,7 +141,7 @@ Deliverable
 ~~~~~~~~~~~
 Environment in which to run ROS1 and the ASUS nodes.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 We are able to correctly interface with the ASUS and see video and depth map.
 
@@ -165,7 +165,7 @@ are going to be using.
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 This sprint feels like it was unproductive, because there weren't any
-deliverables directly related to the Moonrocker's robot.
+deliverables directly related to the Moonrockers' robot.
 We did gain technical knowledge, though, to use toward developing for the robot.
 
 
@@ -185,7 +185,7 @@ Deliverable
     - Camera calibration files
     - AR tag
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 AR tag code can correctly identify an AR tag.
 ar_track_alvar node reports (x,y,z) data and quaternion data of AR tag.
@@ -227,7 +227,7 @@ Deliverable
     - AR tag bundle measurements
     - AR tag bundle XML
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 Camera calibration more accurate with larger calibration board.
 AR tag data more accurate (and less "jumpy") using a bundle system.
@@ -271,7 +271,7 @@ Deliverable
 ~~~~~~~~~~~
 Localization node to report robot location.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 Localization node reports accurate distance.
 More testing needs to be done to find error of data, given several distances.
@@ -311,7 +311,7 @@ Deliverable
 ~~~~~~~~~~~
 Pseudocontroller node
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 The robot moves when told.
 
@@ -350,7 +350,7 @@ Deliverable
 ~~~~~~~~~~~
 N/A
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 Raspberry Pi networking is finicky at best.
 
@@ -388,7 +388,7 @@ Sprint Backlog
 Deliverable
 ~~~~~~~~~~~
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 
 Successes and Failures
@@ -417,7 +417,7 @@ Deliverable
 ~~~~~~~~~~~
 More developed localization node
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 No tests ran, yet
 
@@ -455,18 +455,18 @@ Deliverable
 ~~~~~~~~~~~
 More progress made for the localization node.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
-Up until now, only one or two cameras plugged directly into the odroid. This
+Up until now, only one or two cameras plugged directly into the O-Droid. This
 worked fine, though the distance measurement jumped back and forth as the
 cameras were both being looked at and were feeding data that was slightly off
 because they were separated by a few inches. We had future plans to deal with
 this by applying a transform to each camera giving information so each camera
 knows where it is relative to the robot and can adjust its measurements. This
 would make each camera give the same information as the others. Four cameras
-were needed to see all around the robot and the odroid only has three USB ports
+were needed to see all around the robot and the O-Droid only has three USB ports
 so a hub would be used to connect them. We plugged all four cameras into the USB
-3.0 hub and into the odroid and realized nothing worked. The cameras are all USB
+3.0 hub and into the O-Droid and realized nothing worked. The cameras are all USB
 2.0 devices and even though there is theoretically enough throughput capacity to
 run all the cameras at the same time, this could not be done. Even two cameras
 running at the same time caused the node to crash. This was verified on multiple
@@ -476,7 +476,7 @@ camera feed of more than one camera at a time when connected to USB hub.
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
 Successes
-    -The localization still worked when the cameras were plugged in to the odroid directly.
+    -The localization still worked when the cameras were plugged in to the O-Droid directly.
 Failures
     -The USB hub can not operate all the cameras at the same time. 
 
@@ -495,7 +495,7 @@ Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 We ran in to unforseen issue and brainstormed ways on how to fix them. We
 expected this to just work as we had it working with two cameras plugged
-directly into the odroid without a problem.
+directly into the O-Droid without a problem.
 
 Sprint 13 Report
 ----------------
@@ -509,7 +509,7 @@ Deliverable
 ~~~~~~~~~~~
     -More progress was made on the localization system.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 Because of the issue last sprint, a camera switching algorithm was added to
 start and stop camera nodes depending on if they could see the tags. Depending
@@ -564,7 +564,7 @@ Deliverable
 ~~~~~~~~~~~
     -Improved the localization system.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 To get more accurate results for localizing the robot, we decided to combine the
 data given by the camera system with the wheel encoder information to better
@@ -617,7 +617,7 @@ Deliverable
     -Made modifications to the collection and deposition systems we thought
     would work initially.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 Concerns were brought up of the robot's capability to mine 30cm down to collect
 the regolith after extending the actuators all the way down and back up when
@@ -671,10 +671,10 @@ Deliverable
 ~~~~~~~~~~~
     -This sprint fixed hardware problems related to development.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 The USB 3.0 hub need for the cameras could not fit in the original brain box
-enclosure which also blocked certain ports on the pi and odroid. We ended up
+enclosure which also blocked certain ports on the pi and O-Droid. We ended up
 temporarily relocating the equipment into a new larger enclosure and wired it up
 to the best of our ability because no EE members were present.
 
@@ -714,7 +714,7 @@ Deliverable
 ~~~~~~~~~~~
     -This addition affected mainly localization and path planning.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 A configuration file to store the field dimension, robot dimensions, coordinate
 offsets for AR tag bundle and camera placement, etc. was conceived early on but
@@ -782,27 +782,27 @@ Sprint 19 Report
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
-    - Develop contingency algorithm to allow the robot to find ar-tags when lost.
+    - Develop contingency algorithm to allow the robot to find AR tags when lost.
     - Continue developing on point to point path traversal.
 
 Deliverable
 ~~~~~~~~~~~
-    - A robot that is capable of relocating itself on the field if an AR-tag is lost.
-    - A robot that does not provide completely false localization data if AR-tags are not visible.
+    - A robot that is capable of relocating itself on the field if an AR tag is lost.
+    - A robot that does not provide completely false localization data if AR tags are not visible.
     - A starting point for the simple path traversal algorithm with some configurable parameters.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
-The robot was able to search for AR-tags when first placed on the playing field.  
-If the Ar-tags are not found the robot successfully executed a 45 degree rotation to help align cameras.
-After several tests placing the robot in different locations and angles, the Ar-tags were always found.
+The robot was able to search for AR tags when first placed on the playing field.  
+If the AR tags are not found the robot successfully executed a 45 degree rotation to help align cameras.
+After several tests placing the robot in different locations and angles, the AR tags were always found.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
 Successes
     - The code remained modular and made extra use of the config file developed previously.
     - Localization is now more self sufficient.
-    - The robot can locate it self on the field at startup or after a loss of Ar-tag visibility.
+    - The robot can locate it self on the field at startup or after a loss of AR tag visibility.
 Failures
     - A new bug relating to robot angle with 2 of the 4 cameras became apparent.
 
@@ -816,7 +816,7 @@ The appearance of the robot angle bug is a small setback but the robot is moving
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
-Because the cameras already cycle through automatically to find an AR-tag this algorithm was fairly easy
+Because the cameras already cycle through automatically to find an AR tag this algorithm was fairly easy
 to write. Most of this sprint involved testing that resulted in another set of good verifiable test results
 on the localization system. Also the bug that was revealed once fixed will improve accuracy of the robot's 
 localization.
@@ -829,50 +829,50 @@ Sprint 20 Report
 Sprint Backlog
 ~~~~~~~~~~~~~~
     - Fix remaining localization bugs
-    - Improve robot localization accuracy between AR-Tag updates (while moving over rough terrain)
+    - Improve robot localization accuracy between AR tag updates (while moving over rough terrain)
     - Expose more low level hardware information to ROS nodes (such as motor current data)
-    - Design new full hopper AR-Tag array
+    - Design new full hopper AR tag array
     - Continue work on point to point path traversal
 
 Deliverable
 ~~~~~~~~~~~
 	- Accurate localization with no angle errors for some cameras
-	- Localization that interpolates using encoder data between Ar-tag updates.
+	- Localization that interpolates using encoder data between AR tag updates.
 	- A robot with necessary motor current sensor data available to start work on collection and deposition algorithms.
-	- A full sized hopper Ar-Tag array to replace the small test Ar-tags.
+	- A full sized hopper AR tag array to replace the small test AR tags.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
 After fixing the camera angle bugs testing of the new interpolation begun, followed by testing of the new full sized 
-AR-tag array.
+AR tag array.
 	- At first the interpolation of encoder data seemed to be quite inaccurate
 	- A small change was made to increase the encoder polling rate improved the accuracy at the cost of more system-resources on the pi.
-	- Testing of the full AR-tag array resulted in completely inaccurate localization data.
-	- Further investigation revealed the Ar-tag tracking library in use is incapable of properly dealing with Ar-tags of varying sizes.
+	- Testing of the full AR tag array resulted in completely inaccurate localization data.
+	- Further investigation revealed the AR tag tracking library in use is incapable of properly dealing with AR tags of varying sizes.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
 Successes
     - The code remained modular and made extra use of the config file developed previously.
-    - After some tweaking the encoder data is being used in tandem with the Ar-Tag data successfully.
+    - After some tweaking the encoder data is being used in tandem with the AR Tag data successfully.
 Failures
-    - The unknown limitation of the Ar-Tracking library for varying Ar-tag size.
-    - As a result the full size Ar-tag needs to be scrapped and redesigned.
+    - The unknown limitation of the AR tracking library for varying AR tag size.
+    - As a result the full size AR tag needs to be scrapped and redesigned.
 
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Motor current sensing remains on the backlog until path new Ar-tag problems are resolved.
+Motor current sensing remains on the backlog until path new AR tag problems are resolved.
 
 Sprint Review
 ~~~~~~~~~~~~~
 	- This sprint is a bit larger than normal due to part of one of the weeks having a large snow storm.
-	- The sprint was mostly successful baring the new found limitations of the Ar-tag tracking library.
+	- The sprint was mostly successful baring the new found limitations of the AR tag tracking library.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
 For this sprint there was not much more we could have done to prevent the limitation of a library that has little documentation.
-Some design time and a small amount of funds for the professionally printed Ar-tag banner was wasted, however the fix remains quite simple.
+Some design time and a small amount of funds for the professionally printed AR tag banner was wasted, however the fix remains quite simple.
 
 
 Sprint 21 Report
@@ -881,26 +881,26 @@ Sprint 21 Report
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
-    - Redesign a new full sized Ar-tag array.
-    - Test accuracy of full sized Ar-tag.
+    - Redesign a new full sized AR tag array.
+    - Test accuracy of full sized AR tag.
     - More work on path traversing
     - Prepare for Design fair.
 
 Deliverable
 ~~~~~~~~~~~
-	- A full sized hopper Ar-Tag array to replace the small test Ar-tags.
+	- A full sized hopper AR tag array to replace the small test AR tags.
 	- A robot capable of traveling between two points.
 	- A design fair poster.
 
-Results of testing
+Results of Testing
 ~~~~~~~~~~~~~~~~~~
-The testing of the new Ar-tag array was a success.  The position data of the from the new full size array is much more stable and accurate.
+The testing of the new AR tag array was a success.  The position data of the from the new full size array is much more stable and accurate.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
 Successes
     - The code remained modular and made extra use of the config file developed previously.
-    - With the new Ar-tags the added stability and accuracy of the localization is encouraging.
+    - With the new AR tags the added stability and accuracy of the localization is encouraging.
 Failures
     - Time management, some inability to meet with team and, other events resulted in less getting done than originally planed.
     - Path traversal was not quite ready to be tested.
@@ -920,5 +920,5 @@ This sprint could had more done, however, the snowstorm and some electrical engi
 caused less work to get done than originally planned.  The continued battery issues that plague the robot occasionally prevent 
 testing from getting done.
 
-The new Ar-Tag array is large enough to help us further test the camera's ocular calibration. The early results show that we
+The new AR tag array is large enough to help us further test the camera's ocular calibration. The early results show that we
 could do better but it may not be necessary.

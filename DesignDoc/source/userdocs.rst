@@ -2,11 +2,11 @@ User Documentation
 ==================
 
 The robot can be driven in two different ways. Either the controller can be
-plugged in directly to the raspberry pi or the controller can be plugged in to a
+plugged in directly to the Raspberry Pi or the controller can be plugged in to a
 laptop and driven over a network. 
 
-In order to operate the robot with the controller plugged in to the raspberry
-pi, the computers should be turned on as done in previous years. The controller
+In order to operate the robot with the controller plugged in to the Raspberry
+Pi, the computers should be turned on as done in previous years. The controller
 can be disconnected and reconnected at any time without reboot however the last
 command is remembered. If the controller becomes unplugged while driving, the
 robot will continue driving until the controller is plugged back in to give a
@@ -26,8 +26,8 @@ In order to operate the robot through a network such as in the competition, an
 ubuntu laptop connected to a router will be needed. The Xbox controller will
 need to be plugged in to the laptop. The user will have to launch the given ROS
 file on the laptop. This will run the Xbox node on the laptop and send the Xbox
-controller output through the router to the wifi on the pi which will drive the
-robot in the same manner as plugging the controller directly in to the pi. 
+controller output through the router to the WiFi on the Pi which will drive the
+robot in the same manner as plugging the controller directly in to the Pi. 
 
 Autonomy is started and stopped by pressing the start button on the controller.
 Once the button is pressed, all controller commands (except the start button)

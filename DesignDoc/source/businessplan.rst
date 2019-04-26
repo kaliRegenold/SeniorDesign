@@ -4,7 +4,7 @@ Business Plan
 Business Model
 --------------
 NASA gives out cash prizes for winning awards and placing in the top three at the RMC.
-So, the general business model for Moonrockers to make money is to win.
+The general business model for Moonrockers to make money is to win.
 Coincidentally, that's our goal for this project anyway.
 
 Market and Competition
@@ -15,7 +15,7 @@ the Moonrockers team on campus. Even as contractors we aren't selling our work
 or time. We do have competition though, and that's the most relevant section of
 this business chapter.
 
-Our competition consists of about fifty teams rom around the United States, most
+Our competition consists of about fifty teams from around the United States, most
 with more money and resources than us. All of these teams are competing to have
 the best robot in the competition and therefore win the prize money that comes
 with first place. Although there are several deliverables for the competition
@@ -24,22 +24,22 @@ section of the competition depends only on how well the robot performs with a
 few points coming from the design such as dust resistance and overall weight.
 The majority of points comes from how much material the robot was able to mine
 within the allotted time and for the different levels of autonomy. Having been
-to the competition before the team has a general idea on how the robot is going
+to the competition before, the team has a general idea on how the robot is going
 to perform versus the other teams. The current iteration of the robot excelled
 in mining and may have won that section last year if not for a mechanical
 failure. As far as autonomy goes, Alabama is the only other team to get a fully
-autonomous run according to the official 2018 nasa results. If our robot is able
+autonomous run according to the official 2018 NASA results. If our robot is able
 to mine for both runs with fully functional autonomy we believe we will have the
 superior robot.
 
 Like most businesses, we know what the competition is and where they are at. We
-observe other teams as the compete and what designs work and dont work. From an
+observe other teams as they compete and what designs work and don't work. From an
 mechanical standpoint, many of the robots had smaller wheels and instantly
-became stuck or had excavation buckets that were to small to effectively move
+became stuck or had excavation buckets that were too small to effectively move
 material. Alabama is the main competition in the autonomy section. Although we
 do not know the specifics of how their system operates, we know they were using
 an expensive lidar system we believe to be for navigational purposes. We elected
-to take out own approach as we did not think lidar would be the best solution
+to take our own approach as we did not think lidar would be the best solution
 nor could we afford a lidar of that quality. 
 
 As we observe the competing teams runs, the other teams will also be observing
@@ -47,10 +47,7 @@ us. If our AR tag/camera approach proves to be effective for navigation, other
 teams may use our idea. We can not prevent this but instead just make sure our
 system performs well consistently. We have the advantage of having a head start
 using the methods we developed even if other teams using similar methods which
-will hopefully allow us to stay ahead of them. 
-
-Compared to the rest of the competition, we believe our robot is designed to out perform them. The wheels are large enough to drive in
-the soft dirt 
+will hopefully allow us to stay ahead of them.
 
 Regulatory environment
 ----------------------
@@ -62,7 +59,7 @@ Other regulations are simply the rules that define the competition and are detai
 
 Intellectual Property and Freedom to Operate
 --------------------------------------------
-Intellectual Property is detailed the the Senior Design Contract.
+Intellectual Property is detailed in the Senior Design Contract.
 
 
 Management Team and Advisors
@@ -76,7 +73,7 @@ Sources and Uses of Capital
 ---------------------------
 The SD Mines SOAP Committee is the largest source of money for the Moonrockers team.
 All other money comes from fund raising and donations.
-The software team has used $250 of the $5,000 Moonrockers has on hardware.
+The software team used $250 of the $5,000 Moonrocker budget.
 
 
 Exit Plan

@@ -33,16 +33,16 @@ of the robot.
 
    ROS Network Diagram [Figure 1]
 
-localization System
+Localization System
 ~~~~~~~~~~~~~~~~~~~
 
 The localization system is in charge of finding the location of the robot on the
 field at any given time. This will mainly involve looking at an AR tag bundle, which
 will be placed on the deposition hopper, with four cameras mounted at different 
 locations on the robot. If at any time no cameras see the AR tag, the wheel encoder
-information will be used in combination with the robots last known position to make
-a guess on where the robot is while its moving until one of the cameras gets a visual
-of the AR bundle to correct the location.
+information will be used in combination with the robot's last known position to make
+a guess on where the robot is while it's moving until one of the cameras gets a visual
+of the AR tag bundle to correct the location.
 
 Navigation System
 ~~~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ The navigation system is used to plot a path from the known location of the robo
 to where it wants to be. This system will work with the localization system to monitor
 how well the robot is following the computed path and adjust as needed. 
 
-Collection-Deposition system
+Collection-Deposition System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The collection-deposition system controls the bucket system and deposition belt as
@@ -64,11 +64,11 @@ load sensors indicate the collection bin is empty.
 Technologies Overview
 ---------------------
 
-The system is being developed using ROS 1 kinetic to control inter process
+The system is being developed using ROS Kinetic to control inter process
 communication between systems. To track the AR tags on the hopper the library
 ar_track_alvar is used along with the tf library to transform the data. The
 python library inputs is used to take manual input from the Xbox controller in
-manual mode. The ROS package robot_localization is also being used for sensor
+manual mode. The ROS package robot_localization could also be used for sensor
 fusion and filtering of input.
 
 Links for further reading of libraries:
@@ -90,18 +90,18 @@ Technologies Used
 
 The ar_track_alvar library along with the tf library are used by this system. ar_track_alvar
 is used to get data about the AR tag bundle such as distance, and angles of rotation using
-the cameras. This was developed with a Logitech webcam. Recently the cameras being used in the
-competition arrived and will be used for this system.
+the cameras. This was developed with a Logitech webcam. Different cameras will be
+used for this system.
 
 Component Overview
 ^^^^^^^^^^^^^^^^^^
 
 The localization ROS node will spit out x and y coordinates of the center of the robot.
-The coordinate origin is still being determined. Right now the corner of the field with the
+Right now the corner of the field with the
 hopper will be treated as (0,0) for the field. All the localization system will do is monitor which
 camera on the robot is seeing the AR tags, and use the position information about the camera relative to
 the robot as well as distance and rotation of the camera relative to the AR tag bundle to determine
-where the center of the robot it on the field and possibly return angle of rotation of the robot also.
+where the center of the robot it on the field and also return heading of the robot.
 
 
 .. figure:: ./Localization.png
@@ -113,10 +113,10 @@ where the center of the robot it on the field and possibly return angle of rotat
 Design Details
 ^^^^^^^^^^^^^^
 
-The localization system takes information from the AR Tag Transform library which is used to
+The localization system takes information from the AR tag transform library which is used to
 observe the AR tag bundle on the hopper and converts it into x y coordinates. An AR tag bundle
-is simple a collection of AR tags. Currently three are being used on the hopper. The localization
-system converts the data for use in a ROS messages. The cameras are switched on and off depending
+is a simple collection of AR tags. For development three AR tags were used on the hopper. The localization
+system converts the data for use in a ROS message. The cameras are switched on and off depending
 on whether or not they can see the AR tag bundle. When first launching, the system briefly turns
 each camera on until it finds one that can see the AR bundle. The camera is then used to get the
 distance and angle from the AR bundle. If the camera loses vision of the AR bundle for a specified
@@ -131,8 +131,7 @@ Navigation System (Path Planner)
 Technologies Used
 ^^^^^^^^^^^^^^^^^
 
-This system uses the AR throw and sensor information from the ASTRA camera to scan the field and
-mark obstacles. Potential functions are used to map a path around the obstacles. The navigation 
+Potential functions are used to map a path around the obstacles. The navigation 
 system also monitors the data from the localization system to check on the progress the robot is
 making as it is traversing the path. The system also uses this information and wheel encoder
 from the motors to determine if the robot is stuck, meaning the wheels are turning but the 
@@ -143,10 +142,8 @@ Component Overview
 
 This system generates a list of points outlining a path and gives the necessary motor control
 signals to the wheel to drive along the path. It also takes in localization information to adjust
-the path as needed if it begins to wander. When the robot finishes mining the top layer of BP-1,
-the robot is rotated to dump the BP-1 off to the side and out of the way of the path to the hopper. 
-The navigation system handles rotating the robot 90 degrees from the hole and back. The navigation 
-system also handles getting the robot unstuck if it happens to get caught on an obstacle.
+the path as needed if it begins to wander. The navigation system also handles getting the robot 
+unstuck if it happens to get caught on an obstacle.
 
 
 .. figure:: ./Navigation.png
@@ -158,9 +155,6 @@ system also handles getting the robot unstuck if it happens to get caught on an 
 Design Details
 ^^^^^^^^^^^^^^
 
-The navigation system controls how the robot gets to a location on the field. Using the IR throw and 
-object detection capabilities, it maps out where the obstacles are on the field. This information is
-then used to create potential functions to map out a path to the goal while avoiding the obstacles.
 The navigation system maps out a path to follow, either from the starting position to a mining 
 location, from the hopper to the mining location, or from the mining location to the hopper. The system
 also controls moving the robot along the path. The navigation will send wheel speed information to the
@@ -169,13 +163,6 @@ When moving, error will be introduced, most likely from wheel slippage and uneve
 continuously monitors information provided by the localization system to keep track of where the robot
 is relative to the path it is supposed to be following. The system will use this information to adjust wheel
 speeds in route to correct for the path variation as it occurs.
-
-The navigation system is also responsible for moving the robot away from the mining location temporarily.
-When control is given to the navigation system after digging for the first time, the system sends the
-necessary wheel commands to rotate the robot 90 degrees. This measurement does not need to be exact. The 
-collection system will dump the mined BP-1 then the navigation system will resume control. The system uses
-the forward facing ASTRA camera to relocated the hole and the localization information to move the robot to
-its exact original mining position to continue digging.
 
 
 Collection-Deposition System
@@ -202,9 +189,7 @@ the collection system is digging. The system actuates the arm down at varying sp
 to dig at a constant rate. The collection system monitors the load sensors on the collection bin and shuts off
 the collection belt and actuates the arm up when the collection bin is full. 
 The first layer dug will consist of only BP-1 which yields no points. The collection system once full for
-the first time, hands control to the navigation system which turns the robot 90 degrees. The deposition system
-then dumps the collected material back on to the field, out of the way as to not obstruct the path to the hopper.
-The navigation system then moves the robot back to the hole. The collection system takes over and continues
+the first time, dumps the collected material back on to the field. The collection system continues
 digging in the same hole, this time reaching the regolith under the BP-1. The system then mines the regolith
 until the collection bin is full on the robot. The navigation system drives the robot back to the hopper. Once
 in position, the deposition system runs the deposition belt until the collection bin is empty as indicated by
@@ -220,7 +205,7 @@ the load sensors.
 Design Details
 ^^^^^^^^^^^^^^
 
-The ROS node for this system takes in information from the current sensors, load sensors, ASTRA camera, and
+The ROS node for this system takes in information from the current sensors, load sensors, and
 actuator end stops and encoders to function. When control is handed off to the collection system by the scheduler
 for the first time, the collection system assumes it is at a mining position. The scheduler wont hand off control
 if it is not in a valid mining spot. The system first uses the angle actuators to move the collection arm to a set
@@ -231,8 +216,8 @@ on the system. The load is kept constant by continuously running the bucket chai
 starts to rise, the downward actuation is temporarily stopped to prevent the bucket chain from being bogged down while
 digging. While the process is running, the system also monitors the pressure sensors under the collection bin on the 
 robot to determine when it is full. Once full, the collection belt is stopped and the arm is actuated all the way back
-up until the end stops are triggered. The system hands off control to the navigation system indicating it is full. The
-navigation system then moves the robot 90 degrees. The collection-deposition system then runs the belt and the collection
+up until the end stops are triggered. The system hands off control to the navigation system indicating it is full. 
+The collection-deposition system then runs the belt and the collection
 belt because some of the buckets are still full, until the load sensors indicate the collection bin is empty. This first
 stage clears away the top level of BP-1, which is worth no points.
 

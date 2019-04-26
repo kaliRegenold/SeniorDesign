@@ -1,5 +1,5 @@
 Overview, Description, and Deliverables
-======================================
+======================================+
 
 This section outlines the project at a high level. The client and the 
 project are described below.

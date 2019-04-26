@@ -10,7 +10,7 @@ Overview
 
 This project faces several challenges to ensure a successful competition run.
 The code will not be running in a perfect or stable environment and any number
-of problems may occur within the code, on the computers, or on th physical bot.
+of problems may occur within the code, on the computers, or on the physical bot.
 For these reasons, we have employed careful testing of our system in an 
 automated and manual fashion.
 
@@ -28,15 +28,15 @@ project:
 * Python 2.7
 * ROS Kinetic setup in as described in the project development environment section.
 * Access to the Moonrockers code repository.
-* A WIFI network connection shared with the robot.
+* A WiFi network connection shared with the robot.
 * SSH capability (for communication with robot's systems)
 
 Below are a list of testing hardware dependencies for this project:
 
 * Test competition arena (to scale)
 * Test deposition hopper (to scale)
-* Hopper AR-Tag Bundle (exact layout described in the repository documentation)
-* The Moonrockers competition robot
+* Hopper AR tag bundle (exact layout described in the repository documentation)
+* The Moonrockers' competition robot
 * Xbox 360 Controller (manual robot control)
 * Development computer (with aforementioned software)
 
@@ -45,7 +45,7 @@ Test design and setup
 
 Additional resources are available to do physical testing of the robot in a mock
 competition environment. There is a taped full-scale outline of the competition
-field indoors in the Moonrockers workspace. The hopper location is also taped
+field indoors in the Moonrockers' workspace. The hopper location is also taped
 out. This field is used for location testing as well as some navigation testing.
 The robot can see the AR tags on a fake hopper and determine its location on the
 field. This setup is used for basic navigation testing only since the excavation
@@ -64,7 +64,7 @@ as intended as well as handle unintended situations gracefully.
 Localization
 ~~~~~~~~~~~~
 
-Recall the localization system is in charge of keeping track of the robots
+Recall the localization system is in charge of keeping track of the robot's
 coordinate location and rotation on the field. Testing of the localization
 system will consist of physical tests as well as unit testing of the individual
 components. Since cameras are not yet mounted on the robot, a cardboard cutout
@@ -94,7 +94,7 @@ dusty environment and uneven terrain. A similar testing method will be used in
 this environment. 
 
 Camera switching will also be tested with localization. Because of USB
-limitations, only two cameras can be turned on at once. Therefore if a camera
+limitations, only one camera can be turned on at once. Therefore if a camera
 can not see the AR tags, it turns off. If a camera can see the AR tags, then
 that camera will be used until the robot rotates in such as way the camera loses
 the tags. Then the camera will shut off and the remaining cameras are cycled
@@ -130,17 +130,13 @@ the robot. This method can be automated but is far from ideal as it is difficult
 to accurately simulate where the robot will go given certain wheel speeds
 because of motor variations and wheel slippage on the terrain. 
 
-Although the obstacles in the competition last year were too small to cause
-concern for the robot, the navigation system will still take in depth
-information from an ASTRA camera to assist with navigating around obstacles as
-necessary. This information along with the goal will be used to develope
+The obstacles in the competition last year were too small to cause
+concern for the robot Location information along with the goal will be used to develop
 potential fields which will be used to plan a route for the robot to follow.
-Since these fields vary depending on the start and end location as well as
-obstacle location, it would be difficult to mock out a "correct" potential field
+Since these fields vary depending on the start and end location, it would be 
+difficult to mock out a "correct" potential field
 to compare the navigation system's output to. Instead the generated path will
-have to be manually checked to see if it will work for the given scenario. This
-testing will not be automated and rely on physically showing the ASTRA camera
-the field since the data the camera generates would be too complex to mock out.
+have to be manually checked to see if it will work for the given scenario.
 
 Collection
 ~~~~~~~~~~
@@ -150,7 +146,7 @@ digging. It receives information from the load sensors on the collection bin to
 determine how much regolith has been collected as well as encoder information
 from the linear actuators and current draw information from the collection
 system drive motor. Testing the entire operation of this system requires the
-practice pit to be complete to simulate the exact conditions of the competition.
+practice field to be complete to simulate the exact conditions of the competition.
 However individual components of the algorithm can be tested. If a certain event
 occurs, certain events should be triggered. The load sensors indicate when the
 collection bin on the robot is full. Data from these sensors can be mocked and
@@ -159,7 +155,7 @@ should stop the collection belt and raise the collection arm up all the way.
 This section can be tested in code because it requires simple data mocking and
 the signals ROS sends to the collection motor and actuators can be intercepted
 and verified that they sent the proper command. In a similar manner, the
-regolith that should be collected is buried beneath 30cm of BP-1 dirt which
+regolith that should be collected is buried beneath 30cm of BP-1 which
 needs to be removed. The system should dig until the linear actuators indicate
 they are extended 30cm into the ground. The actuators should then stop and the
 deposition belt run while the excavation belt continues to run to dump all BP-1
@@ -170,9 +166,9 @@ deposition bin to be emptied. This can again be tested in software.
 
 When digging the collection system has to lower the actuators to extend the
 digging arm into the regolith without overloading the collection motor. If the
-collection motor is drawing too high of voltage the linear actuators lowering
-the collection belt should stop to allow the collection belt to catch up. This
-is easily tested in code by sending fake voltage data to the collection system
+collection motor is drawing too high of current the linear actuators lowering
+the collection belt should stop to allow the collection system to catch up. This
+is easily tested in code by sending fake current data to the collection system
 which should then pause the linear actuators. 
 
 Deposition
@@ -196,7 +192,7 @@ how the robot responds to situations it shouldn't be in, such as getting stuck
 or receiving conflicting data or the loss of a sensor. 
 
 A situation that was tested in the volleyball court was how to handle getting
-stuck. The robot was placed in a hole it couldnt drive out of. Under manual
+stuck. The robot was placed in a hole it couldn't drive out of. Under manual
 control the driver quickly switched from a left and right turn which caused the
 hole walls to collapse and the robot to gain traction again. We will implement a
 similar method if at any point the wheels are spinning and the location system
@@ -204,7 +200,7 @@ says the robot is not moving. This testing will ensure the robot can not get
 stuck in the field. 
 
 Another contingency test will monitor how the localization system handles a
-camera failure if a camera becomes obstructed. Because of the camera field of
+camera failure if a camera becomes obstructed. Due to the camera field of
 view and the layout on the robot, there will always be one camera that will see
 the AR tags to get localization information. If a camera fails and the robot is
 rotated in a certain way, no camera will see the AR tags. The camera switching
@@ -279,7 +275,7 @@ on whether the requirement was met.
 One such test is the system resources test. Since these algorithms are
 being run on relatively small SOCs like a Raspberry Pi or an O-Droid,
 the system needs to be efficient. Efficient code is important for
-reliability of the system.  If a given algorithm uses too much resources
+reliability of the system.  If a given algorithm uses too many resources
 it may cause issues for the other systems trying to run the robot such as
 the scheduler or other important operations.
 
@@ -294,11 +290,7 @@ For the GitLab repository, we ensure that things do not easily get broken
 with simple gated check-ins using continuous integration checking for basic
 syntax validity checking. A master branch is kept clean of commits and is
 only merged from a dev branch. Dev gets merged to from various feature
-branches. 
-
-This setup is easily expendable and unit-tests could be added in the
-future, however, a need for unit testing hasn't been found. This is largely 
-in part to the manual nature of many of the tests required. 
+branches.
 
 Risk Analysis
 -------------

@@ -11,13 +11,13 @@ Team Member’s Roles
 Project Management Approach
 ---------------------------
 
-The project will be developed in an agile manner. Sprint lengths with
+The project will be developed in an agile manner. Sprint lengths will
 be one week. Entire team meetings will take place every Monday with additional
 autonomy specific meetings will take place on Tuesdays and Thursdays. Trello 
 will be used to manage user stories and the product backlog. The Trello page 
 is accessible by anyone on the Moonrockers team, but mainly used by the autonomy
 team. Sprint tasks will also be written on the Trello board as well as trouble 
-tickets. Git will only be used for code management as well as documentation.
+tickets. Git will be used for code management as well as documentation.
 
 Stakeholder Information
 ------------------------
@@ -36,7 +36,7 @@ members should contact the most recent graduated seniors.
 Management or Instructor (Scrum Master)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Carter Barkley, the current Moonrockers president will be the Scrum master. Although he will
+Carter Barkley, the current Moonrockers president, will be the Scrum master. Although he will
 not directly be involved in the autonomy team, he will lead sprint meetings and monitor
 overall progress of the autonomy team as well as aid on collaboration of the autonomy team
 with the rest of the Moonrockers team.
@@ -50,8 +50,8 @@ development and testing of code.
 Budget
 ------
 
-The Moonrockers team has a budget of $5000 for the 2018/19 semester to cover all 
-expenses for the team. The autonomy team will be able to use funds as needed with permission from the rest of the team. The robot and current existing hardware are provided by the team. Any sensors or computers added by the autonomy team will be provided by the Moonrockers team. Depending on the
+The Moonrockers team has a budget of $5000 for the 2018-19 year to cover all 
+expenses for the team. The autonomy team will be able to use funds as needed with permission from the treasurer. The robot and current existing hardware are provided by the team. Any sensors or computers added by the autonomy team will be provided by the Moonrockers team. Depending on the
 equipment used it may be lent to the team for this year only.
 
 Intellectual Property and Licensing
@@ -64,23 +64,23 @@ Sprint Overview
 ---------------
 
 Sprint cycles run every week, ending at the usual Moonrockers meeting time.
-While Trello is being used to manage tasks and timelines for completion.
-A weekly meeting is held with the all discipline groups and advisors to Moonrockers.
+While Trello is being used to manage tasks and timelines for completion,
+a weekly meeting is held with the all discipline groups and advisors to Moonrockers.
 
 Terminology and Acronyms
 ------------------------
 
-ROS - Robot Operating System
-OpenCV - Open Computer Vision
-RViz - 3D visualization software for ROS
-AR Tag - A B/W square used for detecting orientation
-Pseudocontroller - The system in charge of handing motion commands to the hardware
-Scheduler - The system that decideds the ordering of events in order make progress
-Localization - The system in charge of locating the robot on the field
-Path Planner - They system in charge of deciding how to reach the next location on the field
-Wheel Encoder - A device used to measure wheel velocities
-Collection System - The bucket system located at the front of the robot
-Deposition System - The conveyor belt system located at the rear of the robot
+- ROS - Robot Operating System
+- OpenCV - Open Computer Vision
+- RViz - 3D visualization software for ROS
+- AR Tag - A B/W square used for detecting orientation
+- Pseudocontroller - The system in charge of handing motion commands to the hardware
+- Scheduler - The system that decideds the ordering of events in order make progress
+- Localization - The system in charge of locating the robot on the field
+- Path Planner - They system in charge of deciding how to reach the next location on the field
+- Wheel Encoder - A device used to measure wheel velocities
+- Collection System - The bucket system located at the front of the robot
+- Deposition System - The conveyor belt system located at the rear of the robot
 
 
 Timeline
@@ -91,7 +91,7 @@ Timeline
 Development Environment
 -----------------------
 
-Primary environment is Ubuntu 16.04 on personal laptops and the robot's Raspberry Pi.
+The primary development environment is Ubuntu 16.04 on personal laptops and the robot's Raspberry Pi and Odroid.
 Code from personal computers is normally pushed to the GitLab repository where it
 can then be pulled onto the on-board computers. Setup information can be found below.
 
@@ -106,22 +106,22 @@ with.
 For tools/dependencies all of the following are required: 
 
 * ROS Kinetic With the following packages:
-	- Catkin
-	- AR_Track_Alvar
+	- catkin
+	- ar_track_alvar
 	- OpenCV3
 	- RVIZ
 * Python
-	- Rospy
+	- rospy
 
 Source Control
 --------------
 
-The Moonrockers team uses a Gitlab repository for source control of
+The Moonrockers team uses a GitLab repository for source control of
 the current systems on the robot. This is located on the global 
 GitLab domain.
 
-For our Sr. design project documentation we have a separate
-repository on the SDSMT Gitlab domain.
+For our senior design project documentation we have a separate
+repository on the SDSM&T GitLab domain.
 
 Using Git for our source control allows us to use a hierarchical
 structure for our branching system.  Master and dev branches
@@ -145,7 +145,7 @@ development environment.
 
 * Install Ubuntu 16.04 64bit.
 * Install ROS Kinetic.
-* Install all of the aforementioned ROS Packages.
+* Install all of the aforementioned ROS packages.
 * Install and setup catkin for kinetic.
 * Using the catkin workspace clone the Moonrockers Hardware Interface repo.
 * Also clone the Moonrockers autonomy_odroid and autonomy_pi repos.
