@@ -1,5 +1,5 @@
 Overview, Description, and Deliverables
-======================================+
+=======================================
 
 This section outlines the project at a high level. The client and the 
 project are described below.
@@ -18,7 +18,7 @@ Current Version [1.0.0]
 *Kali Regenold,*
 *Johnathan Westlund*
 
-Revision History
+| ***Revision History***
 
 ===========  ======  ===========================
 Date         Author  Comments
