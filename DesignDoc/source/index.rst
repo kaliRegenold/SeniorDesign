@@ -16,10 +16,7 @@ Senior Design Documentation
    prototypes
    deploy
    userdocs
-   results
-   pubs
    thanks
-   supporting
 
 
 
