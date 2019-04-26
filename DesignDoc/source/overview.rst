@@ -1,4 +1,4 @@
-Overview, Description and Deliverables
+Overview, Description, and Deliverables
 ======================================
 
 This section outlines the project at a high level. The client and the 
@@ -18,21 +18,21 @@ Current Version [1.0.0]
 *Kali Regenold,*
 *Johnathan Westlund*
 
-|  ***Revision History***
+Revision History
 
 ===========  ======  ===========================
 Date         Author  Comments
 -----------  ------  ---------------------------
-2018-18-09   Kali    Initial
-2018-20-09   Kyle    Elevator Pitch
-2018-27-09   All     Requirements, Description
-2018-10-11   All     Contract and Project Doc
-2018-04-12   All     Design, Testing, Prototypes
-2019-24-01   All     Testing Plan
-2019-25-01   Kali    Refinements and Spellcheck
-2019-02-04   All     Buisness Section
-2019-13-04   All     Update Prototypes Section
-2019-25-04   All     Update sections for release
+2018-09-18   Kali    Initial
+2018-09-20   Kyle    Elevator Pitch
+2018-09-27   All     Requirements, Description
+2018-11-10   All     Contract and Project Doc
+2018-12-04   All     Design, Testing, Prototypes
+2019-01-24   All     Testing Plan
+2019-01-25   Kali    Refinements and Spellcheck
+2019-04-02   All     Business Section
+2019-04-13   All     Update Prototypes Section
+2019-04-25   All     Update Sections for Release
 ===========  ======  ===========================
 
 
@@ -54,19 +54,18 @@ and K-12 outreach.
 
 NASA's Robotics Mining competition is designed to promote the development of 
 interest in space activities and STEM (Science, Technology, Engineering, and 
-Mathematics) fields. For more information about the competition, 
-see: https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html
+Mathematics) fields. For more information about the Competition, 
+see https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html.
 
 Project
 -------
 
 The main goal of the project is to implement full, uninterrupted autonomy on
-the Moonrocker's robot for the NASA Robotic mining competition (RMC).  The 
+the Moonrockers' robot for the NASA Robotic Mining Competition (RMC).  The 
 Moonrockers team has continued to show excellence in previous years at the 
-competition. However, in order to take the excellence to the next level, it is 
-required for the Robot to operate under complete autonomy. The current state of
+competition. The next goal is for the robot to operate under complete autonomy. The current state of
 the project already handles much of the mechanical controls, which leaves 
-localization, obstacle collision avoidance, and path planning to be developed.
+localization, path planning, and collection and deposition to be developed.
 
 Mission Statement
 ~~~~~~~~~~~~~~~~~
@@ -80,13 +79,12 @@ Elevator Pitch
 Space is full of scientific potential and untapped resources. However, due to
 the current limitation of technology we must rely on machines to study and
 potentially gather resources from places other than earth.
-Due to the vastness of space direct human control is not possible and machines
+Due to the vastness of space, direct human control is not possible and machines
 must be able to preform tasks on their own.  Our goal at Moonrockers is to 
 research and develop a fully autonomous mining machine that can compete 
-against the best autonomous mining machines in a competition simulating 
-Martian conditions.  In years past Moonrockers have perfected the mechanics of 
-such a machine, but have put little effort into the autonomous control.
-In 2018/2019, we intend to change that.
+in the NASA RMC, a competition that simulates 
+Martian conditions.  In years past, Moonrockers have perfected the mechanics of 
+such a machine, and are now focusing on autonomous control.
 
 Purpose of the System
 ~~~~~~~~~~~~~~~~~~~~~
@@ -100,11 +98,11 @@ Business/Market Need
 --------------------
 
 NASA's Robotics Mining Competition calls for heavy emphasis on autonomy, awarding 500 points for a fully autonomous system.
-Moonrocker's goal is to win the NASA competition, so a large focus has been placed on autonomy for their robot.
+Moonrockers' goal is to win the competition, so a large focus has been placed on autonomy for the robot.
 A successful system could win the team upwards of $4,000.
 
 Product Description:
-    A fully autonomous system for the Moonrocker's robot that implements localization, obstacle collision avoidance, and path planning.
+    A fully autonomous system for the Moonrockers' robot that implements localization, obstacle collision avoidance, and path planning.
 
 Key Business Goals:
     Win the NASA RMC with a fully autonomous system to further research in the Mars robotics field.
@@ -118,9 +116,9 @@ Secondary Markets:
     - Mankind
 
 Assumptions:
-    -  Minimize mass for our required systems
+    -  Minimal mass allowed for our required systems
 
-    -  Minimize bandwidth usage if needed
+    -  Minimal bandwidth usage if needed
 
     -  Low power consumption
 

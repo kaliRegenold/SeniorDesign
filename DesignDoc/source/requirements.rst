@@ -73,12 +73,12 @@ Requirements and Design Constraints
 -----------------------------------
 
 Autonomy system refers to all computers and sensor components relating to our project.
-Robot system refers to the collection of all systems (including autonomy), physically and digitally.
+Robot system refers to the collection of all systems (including autonomy), physically, and digitally.
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-Below are a list of requirements built from information given in the official NASA RMC Rules sheet.
+Below are a list of requirements built from information given in the official NASA RMC rule sheet.
 
 - The Robot System cannot weigh more than 80 kg. The current robot design weighs nearly 80 kg, so our autonomy design must be as light as possible. We must work with the other engineers on the team to balance the weight of the robot.
 
@@ -95,18 +95,18 @@ Below are a list of requirements built from information given in the official NA
 Network Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-The following are requirements on software communication put in place the the NASA RMC Rules.
+The following are requirements on software communication put in place the the NASA RMC rules.
 
 - The Autonomy system must have some form of wireless connection to the remote driver.
 
-- The network should be used as little as possible. Due to a 1 penalty point per kilobit/sec (kb/s) of average data used.
+- The network should be used as little as possible due to a 1 point penalty per kilobit/sec (kb/s) of average data used.
 
 - 200kb/s worth of data is charged for each pre-provided situational awareness camera that is used.
 
 Development Environment Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following are requirements for the development environment put in place by existing software and the clients current setup.
+The following are requirements for the development environment put in place by existing software and the client's current setup.
 
 - The Autonomy system must run under Linux.
 
@@ -137,11 +137,11 @@ This team will meet with the Moonrockers team at designated meeting times and wo
 
 -  GitHub will be used to keep track of backlogs and sprint status
 
--  All parties will have access to the Sprint and Product Backlogs
+-  All parties will have access to the print and product backlogs
 
 -  Approximately 20 Sprints will encompass this particular project
 
--  The Sprints will last 1 week
+-  The sprints will last 1 week
 
 -  Branches must be used for feature development and code is never pushed directly to master.
 
@@ -166,30 +166,30 @@ Research or Proof of Concept Results
 ------------------------------------
 
 Initial research focused on the best ways to localize the robot on the playing 
-field. ROS Packages for such requirements are plentiful but only a few are 
+field. ROS packages for such requirements are plentiful but only a few are 
 relevant and fit our requirements and existing hardware constraints.  The 
-result of this research was to settle on useing AR-Track-Alvar for ROS Kinetic 
-and several cameras to detect AR-Tags and calculate the position of the robot.
+result of this research was to settle on using ar_track_alvar for ROS Kinetic 
+and several cameras to detect AR tags and calculate the position of the robot.
 
-Originally several additional options existed, like the use of wideband radio 
-antennas for localization eventually we settled on using just the AR-tags with 
-the possibillity of fusing wheel encoder data to improve localization later.
+Originally, several additional options existed, like the use of wideband radio 
+antennas for localization. Eventually we settled on using just the AR tags with 
+the possibility of fusing wheel encoder data to improve localization later.
 
 Before further research was done, an MVP / proof of concept was created for the 
 camera tracking system. This involved one camera and a group (bundle) of 
-AR-Tags.  The result of this MVP was a success and proved that this was a viable
- solution to tracking the position of the robot.
+AR tags.  The result of this MVP was a success and proved that this was a viable
+solution to tracking the position of the robot.
 
 After determining the primary form of localization, research began on optimal
- setups for the camera arrangement on the robot.  This research included number
-  of cameras, field of view, types of cameras, lens types, and also how to
-   compensate for a distorting lens. First, the camera calibration was found to
-    be taken care of already with some ROS packages and some scripts to produce
-	 a camera calibration file.
+setups for the camera arrangement on the robot.  This research included determining the number
+of cameras, field of view, types of cameras, lens types, and also how to
+compensate for a distorting lens. First, the camera calibration was found to
+be taken care of already with some ROS packages and some scripts to produce
+a camera calibration file.
 
 With the above knowledge the MVP was improved to a state where multiple cameras
- could operate at the same time, and the location of the camera was being
-  relayed instead of the orientation and position of the AR-Tags.
+could operate at the same time, and the location of the camera was being relayed 
+instead of the orientation and position of the AR tags.
 
 Supporting Material
 -------------------
