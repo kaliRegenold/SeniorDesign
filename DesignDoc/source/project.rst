@@ -17,7 +17,7 @@ autonomy specific meetings will take place on Tuesdays and Thursdays. Trello
 will be used to manage user stories and the product backlog. The Trello page 
 is accessible by anyone on the Moonrockers team, but mainly used by the autonomy
 team. Sprint tasks will also be written on the Trello board as well as trouble 
-tickets. Git will only be used for code management.
+tickets. Git will only be used for code management as well as documentation.
 
 Stakeholder Information
 ------------------------
@@ -50,10 +50,8 @@ development and testing of code.
 Budget
 ------
 
-The Moonrockers team has a budget of $5000 to cover all expenses for the team. The autonomy
-team will be able to use funds as needed with permission from the rest of the team. The
-robot and current existing hardware are provided by the team. Any sensors or computers
-added by the autonomy team will be provided by the Moonrockers team. Depending on the
+The Moonrockers team has a budget of $5000 for the 2018/19 semester to cover all 
+expenses for the team. The autonomy team will be able to use funds as needed with permission from the rest of the team. The robot and current existing hardware are provided by the team. Any sensors or computers added by the autonomy team will be provided by the Moonrockers team. Depending on the
 equipment used it may be lent to the team for this year only.
 
 Intellectual Property and Licensing
@@ -67,16 +65,23 @@ Sprint Overview
 
 Sprint cycles run every week, ending at the usual Moonrockers meeting time.
 While Trello is being used to manage tasks and timelines for completion.
+A weekly meeting is held with the all discipline groups and advisors to Moonrockers.
 
 Terminology and Acronyms
 ------------------------
 
 ROS - Robot Operating System
 OpenCV - Open Computer Vision
-OpenNI - Open Natural Interaction
 RViz - 3D visualization software for ROS
-RGBD - Red, Green, Blue, Distance Camera (Distance from IR Throw)
-IR - Infrared
+AR Tag - A B/W square used for detecting orientation
+Pseudocontroller - The system in charge of handing motion commands to the hardware
+Scheduler - The system that decideds the ordering of events in order make progress
+Localization - The system in charge of locating the robot on the field
+Path Planner - They system in charge of deciding how to reach the next location on the field
+Wheel Encoder - A device used to measure wheel velocities
+Collection System - The bucket system located at the front of the robot
+Deposition System - The conveyor belt system located at the rear of the robot
+
 
 Timeline
 --------
@@ -85,10 +90,9 @@ Timeline
 Development Environment
 -----------------------
 
-Primary environment is Linux on personal laptops.
-Code from personal computers will be pushed to the GitLab repository where it
-will then be pulled onto the on-board computers.
-Setup information can be found below.
+Primary environment is Ubuntu 16.04 on personal laptops and the robot's Raspberry Pi.
+Code from personal computers is normally pushed to the GitLab repository where it
+can then be pulled onto the on-board computers. Setup information can be found below.
 
 Development IDE and Tools
 -------------------------
@@ -102,14 +106,11 @@ For tools/dependencies all of the following are required:
 
 * ROS Kinetic With the following packages:
 	- Catkin
-	- OpenNI
 	- AR_Track_Alvar
 	- OpenCV3
 	- RVIZ
 * Python
-* C++
-* AVR Tools
-* OpenCV
+	- Rospy
 
 Source Control
 --------------
@@ -132,8 +133,8 @@ Build Environment
 The build and run environment is Ubuntu 16.04 64bit.  This is the 
 only version of Ubuntu that will run ROS Kinetic easily. Most of 
 the packages are to be written in python and do not need to be 
-compiled. Any of the C/C++ code can be compiled with GCC or
-Makefiles. 
+compiled. Any of the C/C++ code consists of already existing 
+libraries and low level hardware interface binaries.
 
 Development Machine Setup
 -------------------------
@@ -142,7 +143,8 @@ The following is general a list of the required steps to setup the
 development environment.
 
 * Install Ubuntu 16.04 64bit.
-* Install ROS 1 Kinetic.
-* Install and Compile OpenCV.
+* Install ROS Kinetic.
 * Install all of the aforementioned ROS Packages.
-* Install of the AVR Tools.
+* Install and setup catkin for kinetic.
+* Using the catkin workspace clone the Moonrockers Hardware Interface repo.
+* Also clone the Moonrockers autonomy_odroid and autonomy_pi repos.

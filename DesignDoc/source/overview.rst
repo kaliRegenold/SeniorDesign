@@ -20,15 +20,20 @@ Current Version [1.0.0]
 
 |  ***Revision History***
 
-===========  ======  =======  ===========================
-Date         Author  Version  Comments
------------  ------  -------  ---------------------------
-2018-18-09   Kali    0.0.1    Initial
-2018-20-09   Kyle    0.1.0    Elevator Pitch
-2018-27-09   All     0.2.0    Requirements, Description
-2018-10-11   All     0.4.0    Contract and Project Doc
-2018-04-12   All     1.0.0    Design, Testing, Prototypes
-===========  ======  =======  ===========================
+===========  ======  ===========================
+Date         Author  Comments
+-----------  ------  ---------------------------
+2018-18-09   Kali    Initial
+2018-20-09   Kyle    Elevator Pitch
+2018-27-09   All     Requirements, Description
+2018-10-11   All     Contract and Project Doc
+2018-04-12   All     Design, Testing, Prototypes
+2019-24-01   All     Testing Plan
+2019-25-01   Kali    Refinements and Spellcheck
+2019-02-04   All     Buisness Section
+2019-13-04   All     Update Prototypes Section
+2019-25-04   All     Update sections for release
+===========  ======  ===========================
 
 
 
@@ -56,12 +61,12 @@ Project
 -------
 
 The main goal of the project is to implement full, uninterrupted autonomy on
- the Moonrocker's robot for the NASA Robotic mining competition (RMC).  The 
- Moonrockers team has continued to show excellence in previous years at the 
- competition. However, in order to take the excellence to the next level, it is 
- required for the Robot to operate under complete autonomy. The current state of
- the project already handles much of the mechanical controls, which leaves 
- localization, obstacle collision avoidance, and path planning to be developed.
+the Moonrocker's robot for the NASA Robotic mining competition (RMC).  The 
+Moonrockers team has continued to show excellence in previous years at the 
+competition. However, in order to take the excellence to the next level, it is 
+required for the Robot to operate under complete autonomy. The current state of
+the project already handles much of the mechanical controls, which leaves 
+localization, obstacle collision avoidance, and path planning to be developed.
 
 Mission Statement
 ~~~~~~~~~~~~~~~~~
