@@ -86,6 +86,7 @@ Deposition System - The conveyor belt system located at the rear of the robot
 Timeline
 --------
 .. image:: gantt.png
+.. image:: gantt2.png
 
 Development Environment
 -----------------------
